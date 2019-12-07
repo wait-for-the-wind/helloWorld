@@ -28,7 +28,6 @@ export default {
   },
   mounted () {
     this.index()
-    this.promise()
   },
   methods: {
     indexFind (str, findV) {
