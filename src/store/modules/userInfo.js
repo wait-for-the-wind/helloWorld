@@ -1,6 +1,6 @@
 export default {
   state: {
-    userInfo: {}
+    name: 'shengjingyin'
   },
   mutations: {
 

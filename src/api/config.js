@@ -5,8 +5,23 @@ export function request (config) {
     baseURL: 'http://httpbin.org/',
     timeout: 5000
   })
+
+  instance1.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded;charset=UTF-8'
+
   return instance1(config)
 }
+
+//  export default {
+//    askPost (url, params) {
+//     return new Promise((resolve, reject) => {
+//       axios.post(url, params).then(res => {
+//         resolve(res)
+//       }).catch(err => {
+//         reject(err)
+//       })
+//     })
+//    }
+//  }
 
 // export function request (config) {
 //   const instance1 = axios.create({
