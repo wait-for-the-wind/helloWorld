@@ -1,10 +1,12 @@
 import Vue from 'vue'
 import App from './App.vue'
 import router from './router/index'
-import store from './store/index'
-import { request } from './api/config'
+import store from './store/store'
+import api from './api/api'
 
 Vue.config.productionTip = false
+
+Vue.prototype.$api = api
 
 new Vue({
   router,
@@ -12,11 +14,11 @@ new Vue({
   render: h => h(App)
 }).$mount('#app')
 
-request({
-  url: 'get'
-}).then(res => {
-  console.log(res)
-})
+// request({
+//   url: 'get'
+// }).then(res => {
+//   console.log(res)
+// })
 
 // request({
 //   baseConfig: {

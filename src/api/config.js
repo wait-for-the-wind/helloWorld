@@ -1,15 +1,27 @@
 import axios from 'axios'
 
 export function request (config) {
-  // 1、创建实例
   const instance1 = axios.create({
     baseURL: 'http://httpbin.org/',
     timeout: 5000
   })
-  // 2、设置拦截器
-  // 3、发送网络请求
+
+  instance1.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded;charset=UTF-8'
+
   return instance1(config)
 }
+
+//  export default {
+//    askPost (url, params) {
+//     return new Promise((resolve, reject) => {
+//       axios.post(url, params).then(res => {
+//         resolve(res)
+//       }).catch(err => {
+//         reject(err)
+//       })
+//     })
+//    }
+//  }
 
 // export function request (config) {
 //   const instance1 = axios.create({
