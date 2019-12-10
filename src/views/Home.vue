@@ -1,5 +1,8 @@
 <template>
   <div class="home">
+    <header>
+
+    </header>
     <router-link to='/about'>关于</router-link>
     <router-view></router-view>
   </div>
@@ -20,3 +23,12 @@ export default {
   }
 }
 </script>
+<style lang="less" scoped>
+  .home {
+    header {
+      height: 66px;
+      width: 100%;
+      background-color: pink;
+    }
+  }
+</style>
