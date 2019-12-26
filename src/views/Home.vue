@@ -1,22 +1,27 @@
 <template>
   <div class="home">
-    <router-link to='/about'>关于</router-link>
+    <router-link to="/about">关于</router-link>
     <router-view></router-view>
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-
 export default {
   name: 'home',
-  data () {
+  data() {
     return {
+      name: 'sjy',
+      obj: { name: 'sjy', age: 18 }
     }
   },
-  mounted () {
+  mounted() {
+    this.sum()
   },
   methods: {
+    sum() {
+      let a = 3
+      console.log(a)
+    }
   }
 }
 </script>
