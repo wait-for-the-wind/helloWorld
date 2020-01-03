@@ -15,6 +15,7 @@ export default {
   name: 'home',
   data () {
     return {
+      name: '21313'
     }
   },
   mounted () {
@@ -24,11 +25,11 @@ export default {
 }
 </script>
 <style lang="less" scoped>
-  .home {
-    header {
-      height: 66px;
-      width: 100%;
-      background-color: pink;
-    }
+.home {
+  header {
+    height: 66px;
+    width: 100%;
+    background-color: pink;
   }
+}
 </style>
