@@ -25,14 +25,14 @@
               <el-menu-item index="2-4">CSS3</el-menu-item>
               <el-submenu index="2-5">
                 <template slot="title">javascript</template>
-                <el-menu-item index="2-5-1">原生</el-menu-item>
+                <el-menu-item index="dry_container">原生</el-menu-item>
                 <el-menu-item index="2-5-2">ECMA5</el-menu-item>
                 <el-menu-item index="2-5-3">ECMA6</el-menu-item>
               </el-submenu>
               <el-menu-item index="jquery">JQuery</el-menu-item>
             </el-submenu>
             <el-menu-item index="/tools">工具集锦</el-menu-item>
-            <el-menu-item index="4"><a href="###">订单管理</a></el-menu-item>
+            <el-menu-item index="4"><a href="###">每日一文</a></el-menu-item>
             <el-menu-item index="5"><a href="###">成长历程</a></el-menu-item>
           </el-menu>
         </nav>
@@ -43,7 +43,7 @@
     <router-view/>
 
     <footer>
-      <p>站长是一位比较佛性的程序猿，故本网站不兼容IE9以下（IE9查看也会有些问题）</p>
+      <!-- <p>站长是一位比较佛性的程序猿，故本网站不兼容IE9以下（IE9查看也会有些问题）</p> -->
       <p>Copyright &copy; <a href="www.shengjingyin.com" target="_blank">www.shengjingyin.com</a> 备案号：<a href="www.shengjingyin.com" target="_blank">赣ICI：text678</a></p>
     </footer>
   </div>
@@ -65,7 +65,7 @@ export default {
   },
   methods: {
     handleSelect (key, keyPath) {
-      console.log(key, keyPath)
+      // console.log(key, keyPath)
     }
   }
 }
