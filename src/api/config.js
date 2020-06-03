@@ -1,50 +1,26 @@
 import axios from 'axios'
+// 使用axios时  需要进行函数封装 有利于模块化开发
 
-export function request (config) {
-  const instance1 = axios.create({
-    baseURL: 'http://httpbin.org/',
-    timeout: 5000
-  })
+// 创建实例 是为了将来如果有多个域名得话 可以设置多个axios实例来对应
+const instance = axios.create({
+  baseURL: 'https://www.easy-mock.com/mock/',
+  timeout: 5000
+})
 
-  instance1.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded;charset=UTF-8'
+instance.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded;charset=UTF-8'
 
-  return instance1(config)
+export default {
+  askGet(url, params) {
+    return new Promise((resolve, reject) => {
+      instance.get(url, params).then(res => {
+        resolve(res.date)
+      },
+      err => {
+        reject(err)
+      })
+        .catch(err => {
+          reject(err)
+        })
+    })
+  }
 }
-
-//  export default {
-//    askPost (url, params) {
-//     return new Promise((resolve, reject) => {
-//       axios.post(url, params).then(res => {
-//         resolve(res)
-//       }).catch(err => {
-//         reject(err)
-//       })
-//     })
-//    }
-//  }
-
-// export function request (config) {
-//   const instance1 = axios.create({
-//     baseURL: 'http://httpbin.org/',
-//     timeout: 5000
-//   })
-//   instance1(config.baseConfig)
-//     .then(res => {
-//       config.success(res)
-//     }).catch(err => {
-//       config.failed(err)
-//     })
-// }
-
-// export function request (config, success, failed) {
-//   const instance1 = axios.create({
-//     baseURL: 'http://httpbin.org/',
-//     timeout: 5000
-//   })
-//   instance1(config)
-//     .then(res => {
-//       success(res)
-//     }).catch(err => {
-//       failed(err)
-//     })
-// }
