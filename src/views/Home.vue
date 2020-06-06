@@ -27,6 +27,7 @@
     <button @click="addCooike">添加cooike</button>
     <button @click="remove">删除cooike</button>
     <span class="white--text">Lorem ipsum</span>
+    <span class="white--text">测试一一一一</span>
     <!-- <button @click="sort">排序</button> -->
     <router-view></router-view>
   </div>
