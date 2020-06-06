@@ -24,9 +24,10 @@
       </tbody>
     </table>
     <hr>
-    <img src="https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=2534506313,1688529724&fm=26&gp=0.jpg" alt="">
     <button @click="addCooike">添加cooike</button>
     <button @click="remove">删除cooike</button>
+    <span class="white--text">Lorem ipsum</span>
+    <span class="white--text">测试一一一一</span>
     <!-- <button @click="sort">排序</button> -->
     <router-view></router-view>
   </div>
@@ -50,7 +51,6 @@ export default {
   mounted() {
     this.login()
     this.sum()
-    this.getImageInfo('http://static.tonnn.com/generalpage/4868/pic_small.jpg?v=4', function (width, height) { console.log('width', width); console.log('height', height) })
   },
   methods: {
     ...mapMutations(['add', 'sub', 'subN']),
@@ -91,8 +91,13 @@ export default {
       }
     },
     login() {
-      this.$api.login().then(res => {
-        console.log('res', res)
+      var params = {
+        name: 'shengjingyin123'
+      }
+      this.$api.login(params).then(res => {
+        if (res.success) {
+          console.log('res.', res.data.projects)
+        }
       })
     }
   }
