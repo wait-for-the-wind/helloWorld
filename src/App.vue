@@ -8,7 +8,7 @@
         </div>
         <nav class="nav fl">
           <el-menu
-            :default-active="activeIndex2"
+            :default-active="activeIndex1"
             class="el-menu-demo"
             router
             mode="horizontal"
@@ -17,23 +17,9 @@
             text-color="#fff"
             active-text-color="#ffd04b">
             <el-menu-item index="/home">网站首页</el-menu-item>
-            <el-submenu index="2">
-              <template slot="title">实验室</template>
-              <el-menu-item index="/about">HTML</el-menu-item>
-              <el-menu-item index="/earth">HTML5</el-menu-item>
-              <el-menu-item index="2-3">CSS</el-menu-item>
-              <el-menu-item index="2-4">CSS3</el-menu-item>
-              <el-submenu index="2-5">
-                <template slot="title">javascript</template>
-                <el-menu-item index="dry_container">原生</el-menu-item>
-                <el-menu-item index="2-5-2">ECMA5</el-menu-item>
-                <el-menu-item index="2-5-3">ECMA6</el-menu-item>
-              </el-submenu>
-              <el-menu-item index="jquery">JQuery</el-menu-item>
-            </el-submenu>
             <el-menu-item index="/tools">工具集锦</el-menu-item>
-            <el-menu-item index="4"><a href="###">每日一文</a></el-menu-item>
-            <el-menu-item index="5"><a href="###">成长历程</a></el-menu-item>
+            <el-menu-item index="/blog">每日一文</el-menu-item>
+            <el-menu-item index="/growUp">成长历程</el-menu-item>
           </el-menu>
         </nav>
       </div>
@@ -57,11 +43,17 @@ export default {
   data () {
     return {
       name: '21313',
-      activeIndex: '1',
-      activeIndex2: '1'
+      activeIndex1: '' // 动态tab切换
     }
   },
   mounted () {
+    this.activeIndex1 = this.$router.currentRoute.fullPath
+    console.log('this.router', this.$router)
+  },
+  watch: {
+    $route(to, from) {
+      this.activeIndex1 = to.path
+    }
   },
   methods: {
     handleSelect (key, keyPath) {
@@ -86,7 +78,7 @@ body {background: #999;}
     font {font-size: 15px;color: white;}
   }
   .nav {
-    margin-left: 150px;
+    margin-left: 380px;
   }
 }
 footer {text-align: center;}

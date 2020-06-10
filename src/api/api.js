@@ -1,5 +1,4 @@
 import ask from './config.js'
-console.log('ask', ask)
 export default {
   login (params) {
     return ask.askGet(
@@ -8,8 +7,14 @@ export default {
     )
   },
   test_status_code (params) {
-    return ask.askGet(
+    return ask.askPost(
       '/test_status_code',
+      params
+    )
+  },
+  getHotGame (params) {
+    return ask.askPost(
+      '/game/game_info',
       params
     )
   }
