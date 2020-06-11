@@ -12,6 +12,7 @@ module.exports = {
   chainWebpack: config => {
     config.resolve.alias
       .set('@images', resolve('src/assets/images'))
+      .set('@js', resolve('src/assets/js'))
   },
   // 跨域
   devServer: {

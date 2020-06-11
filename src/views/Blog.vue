@@ -106,6 +106,26 @@
             </li>
           </ul>
         </el-card>
+        <el-card class="box-card" shadow="always">
+          <div slot="header" class="clearfix">
+            <span>来首安静得歌曲吧</span>
+            <el-button style="float: right; padding: 3px 0" type="text">更多</el-button>
+          </div>
+          <ul>
+            <li>
+              <i>1</i>
+              <a href="javascript:;">起点开始</a>
+            </li>
+            <li>
+              <i>2</i>
+              <a href="javascript:;">JS讲解</a>
+            </li>
+            <li>
+              <i>3</i>
+              <a href="javascript:;">起点jflksdjflsjflsdjlfjfkljsdlk543535345f开始</a>
+            </li>
+          </ul>
+        </el-card>
       </el-col>
     </el-row>
   </div>

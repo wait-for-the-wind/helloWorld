@@ -3,6 +3,7 @@ import App from './App.vue'
 import router from './router/index'
 import store from './store/store'
 import api from './api/api'
+import Echarts from 'echarts'
 
 // 引入 babel-polyfill 防止ie7、8出现白屏
 // -> vue 根本不支持 ie 7 8
@@ -17,6 +18,7 @@ import 'element-ui/lib/theme-chalk/display.css'
 
 Vue.config.productionTip = false // 生产模式提醒
 Vue.use(elementUI)
+Vue.prototype.$echart = Echarts
 // 全局调用 this.$api.login()
 Vue.prototype.$api = api
 
