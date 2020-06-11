@@ -75,6 +75,14 @@ export default {
 <style lang="less" scoped>
 body {
   background: #999;
+  .app::before {
+    background: #000 linear-gradient(to left, #4cd964, #5ac8fa, #007aff, #34aadc, #5856d6, #ff2d55);
+    height: 5px;
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 100%;
+  }
 }
 .app {
   width: 100%;
@@ -82,6 +90,7 @@ body {
   height: 60px;
   line-height: 60px;
   overflow: hidden;
+  margin-top: 5px;
   a {
     color: white;
   }

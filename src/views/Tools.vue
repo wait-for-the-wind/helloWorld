@@ -18,6 +18,9 @@
           </el-menu-item>
         </el-menu>
       </el-col>
+      <el-col :span="20">
+        <router-view name="tools_window"></router-view>
+      </el-col>
     </el-row>
   </div>
 </template>
