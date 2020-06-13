@@ -76,9 +76,18 @@ export default {
 body {
   background: #999;
   .app::before {
-    background: #000 linear-gradient(to left, #4cd964, #5ac8fa, #007aff, #34aadc, #5856d6, #ff2d55);
+    background: #000
+      linear-gradient(
+        to left,
+        #4cd964,
+        #5ac8fa,
+        #007aff,
+        #34aadc,
+        #5856d6,
+        #ff2d55
+      );
     height: 5px;
-    content: "";
+    content: '';
     position: absolute;
     top: 0;
     width: 100%;
@@ -108,9 +117,7 @@ body {
 }
 footer {
   text-align: center;
-  position: fixed;
-  bottom: 30px;
-  left: 50%;
-  transform: translateX(-50%);
+  height: 40px;
+  line-height: 10px;
 }
 </style>

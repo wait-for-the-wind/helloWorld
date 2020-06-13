@@ -9,21 +9,21 @@
 <script>
 import China from '@js/china.js'
 export default {
-  data() {
+  data () {
     return {
       flag: false
     }
   },
-  mounted() {
+  mounted () {
     this.drawMap()
   },
   methods: {
-    drawMap() {
+    drawMap () {
       this.$echart.registerMap('China', China)
       var myMap = this.$echart.init(document.getElementById('main'))
       myMap.setOption({
         title: {
-          text: '盛·迎风',
+          text: '足·迹',
           left: 'center'
         },
         tooltip: {}, // 想要有提示，必须要有这个
@@ -31,11 +31,11 @@ export default {
           type: 'piecewise',
           pieces: [
             { min: 1500 }, // 不指定 max，表示 max 为无限大（Infinity）。
-            {min: 900, max: 1500},
-            {min: 310, max: 1000},
-            {min: 200, max: 300},
+            { min: 900, max: 1500 },
+            { min: 310, max: 1000 },
+            { min: 200, max: 300 },
             { min: 10, max: 200 },
-            {max: 5} // 不指定 min，表示 min 为无限大（-Infinity）。
+            { max: 5 } // 不指定 min，表示 min 为无限大（-Infinity）。
           ]
         },
         series: [{
