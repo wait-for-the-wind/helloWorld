@@ -17,6 +17,7 @@ import 'element-ui/lib/theme-chalk/index.css'
 import 'element-ui/lib/theme-chalk/display.css'
 
 Vue.config.productionTip = false // 生产模式提醒
+Vue.config.devtools = false
 Vue.use(elementUI)
 Vue.prototype.$echart = Echarts
 // 全局调用 this.$api.login()

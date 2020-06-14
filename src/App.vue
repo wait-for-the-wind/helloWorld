@@ -37,8 +37,8 @@
       <!-- <p>站长是一位比较佛性的程序猿，故本网站不兼容IE9以下（IE9查看也会有些问题）</p> -->
       <p>
         Copyright &copy;
-        <a href="www.shengjingyin.com" target="_blank">www.shengjingyin.com</a> 备案号：
-        <a href="www.shengjingyin.com" target="_blank">赣ICI：text678</a>
+        <a href="www.shengjingyin.com" target="_blank">www.shengjingyin.com</a>
+        <!-- 备案号：<a href="www.shengjingyin.com" target="_blank">赣ICI：text678</a> -->
       </p>
     </footer>
   </div>
