@@ -7,7 +7,7 @@
           <router-link to="/">**********</router-link>|
           <font>
             建于
-            <time>2020年06月01日</time>
+            <time>2020 年 03 月 30 日</time>
           </font>
         </div>
         <nav class="nav fl">
@@ -27,10 +27,17 @@
             <el-menu-item index="/growUp">个人经历</el-menu-item>
           </el-menu>
         </nav>
+        <!-- 容器 -->
       </div>
     </div>
-
-    <!-- 容器 -->
+    <div class="wrapper">
+      <el-breadcrumb separator="/" class="path">
+        <el-breadcrumb-item :to="{ path: '/' }">首页</el-breadcrumb-item>
+        <el-breadcrumb-item><a href="/">活动管理</a></el-breadcrumb-item>
+        <el-breadcrumb-item>活动列表</el-breadcrumb-item>
+        <el-breadcrumb-item>活动详情</el-breadcrumb-item>
+      </el-breadcrumb>
+    </div>
     <router-view />
 
     <footer>
@@ -57,8 +64,6 @@ export default {
   },
   mounted () {
     this.activeIndex1 = this.$router.currentRoute.fullPath
-    console.log(this.$router)
-    console.log(this.$route)
   },
   watch: {
     $route (to, from) {
@@ -92,6 +97,10 @@ body {
     top: 0;
     width: 100%;
   }
+}
+.path {
+  height: 40px;
+  line-height: 40px;
 }
 .app {
   width: 100%;

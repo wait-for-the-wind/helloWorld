@@ -141,7 +141,7 @@ export default {
 </script>
 <style lang="less">
 .box-card {
-  margin-top: 20px;
+  margin-top: 10px;
   .blogList {
     li {
       padding-bottom: 20px;
