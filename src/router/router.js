@@ -24,6 +24,15 @@ export default [
   // 博客
   { path: '/blog', name: 'blog', component: () => import('../views/Blog.vue') }, // 路由懒加载
   // 成长
-  { path: '/growUp', name: 'growUp', component: () => import('../views/GrowUp.vue') }, // 路由懒加载
+  {
+    path: '/growUp',
+    name: 'growUp',
+    component: () => import('../views/GrowUp.vue'),
+    children: [
+      { path: 'novelCoronavirus', name: 'novelCoronavirus', component: () => import('../views/HotNews/novelCoronavirus.vue') },
+      { path: 'timeOver', name: 'timeOver', component: () => import('../views/HotNews/timeOver.vue') }
+      // { path: 'goodWeb', name: 'goodWeb', component: () => import('../views/ToolsPage/GoodWeb.vue') }
+    ]
+  }, // 路由懒加载
   { path: '*', name: 'home', component: () => import('../views/Home.vue') } // 路由懒加载
 ]

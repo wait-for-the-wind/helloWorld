@@ -25,6 +25,7 @@
             <el-menu-item index="/tools">工具集锦</el-menu-item>
             <el-menu-item index="/blog">每日一文</el-menu-item>
             <el-menu-item index="/growUp">个人经历</el-menu-item>
+            <el-menu-item index="/admin">后台</el-menu-item>
           </el-menu>
         </nav>
         <!-- 容器 -->

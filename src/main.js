@@ -6,7 +6,7 @@ import api from './api/api'
 import Echarts from 'echarts'
 
 // 引入 babel-polyfill 防止ie7、8出现白屏
-// -> vue 根本不支持 ie 7 8
+// -> vue 根本不支持 ie 7 8 ,所以引入也是白引入了
 import 'babel-polyfill'
 // 引入全局样式
 import '@/assets/global.css'

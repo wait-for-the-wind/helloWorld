@@ -85,8 +85,27 @@ p {
   margin: 50px;
 }
 .lbox {
-  img {
-    width: 100%;
+  width: 100%;
+  li {
+    height: 100px;
+    width: 275px;
+    overflow: hidden;
+    position: relative;
+    a {
+      display: block;
+      position: absolute;
+      transform: translate(-50%);
+      img {
+        // width: 50%;
+        transition: all 1s;
+        opacity: .7;
+        display: block;
+      }
+      img:hover {
+        transform: scale(1.2);
+        opacity: 1;
+      }
+    }
   }
 }
 </style>

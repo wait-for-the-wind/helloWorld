@@ -41,15 +41,12 @@ export default {
     }
   },
   mounted() {
-    console.log('this.$store', this.$router)
     let route = this.$route.path
     if (route === '/tools') this.$router.push({ 'path' : '/tools/goodWeb' })
   },
   watch: {
     $route(to, from) {
-      console.log('to', to)
       this.default_active = to.path
-      console.log('this.default_active', this.default_active)
     }
   },
   methods: {
