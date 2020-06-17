@@ -55,6 +55,7 @@ export default {
     ...mapState(['count'])
   },
   mounted () {
+    
   },
   methods: {
     ...mapMutations(['add', 'sub', 'subN']),
