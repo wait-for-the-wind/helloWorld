@@ -34,5 +34,7 @@ export default [
       // { path: 'goodWeb', name: 'goodWeb', component: () => import('../views/ToolsPage/GoodWeb.vue') }
     ]
   }, // 路由懒加载
+  // 后台
+  { path: '/admin', name: 'admin', component: () => import('../views/admin.vue') }, // 路由懒加载
   { path: '*', name: 'home', component: () => import('../views/Home.vue') } // 路由懒加载
 ]

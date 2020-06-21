@@ -10,57 +10,44 @@
 </template>
 <script>
 export default {
-  data() {
+  data () {
     return {
       flag: false
     }
   },
   props: ['rank'],
-  mounted() {},
+  mounted () { },
   methods: {}
 }
 </script>
 <style lang='less' scoped>
-  body{
-    .rank {
-      margin-left: 30px;
-      .el-card__header {
-        padding: 18px 20px;
-        position: relative;
-      }
-      .el-card__header:after {
-        position: absolute;
-        width: 100px;
-        height: 2px;
-        bottom: 0px;
-        left: 0px;
-        content: "";
+body {
+  .rank {
+    margin-left: 30px;
+    ul li {
+      height: 30px;
+      line-height: 30px;
+      margin-bottom: 10px;
+      text-align: left;
+      i {
+        width: 16px;
+        height: 16px;
+        text-align: center;
+        line-height: 16px;
+        color: white;
+        background: #ff6600;
         display: inline-block;
-        background: violet;
+        margin-right: 10px;
       }
-      ul li{
-        height: 30px;
-        line-height: 30px;
-        margin-bottom: 10px;
-        i {
-          width: 16px;
-          height: 16px;
-          text-align: center;
-          line-height: 16px;
-          color: white;
-          background: #FF6600;
-          display: inline-block;
-          margin-right: 10px;
-        }
-        a {
-          max-width: 230px;
-          display: inline-block;
-          overflow: hidden;
-          text-overflow: ellipsis;
-          white-space: nowrap;
-          vertical-align: -29%;
-        }
+      a {
+        max-width: 230px;
+        display: inline-block;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        vertical-align: -29%;
       }
     }
   }
+}
 </style>

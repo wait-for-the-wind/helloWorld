@@ -11,14 +11,14 @@
       :current-page.sync="currentPage1"
       :page-size="24"
       layout="total, prev, pager, next"
-      :total="data.length">
-    </el-pagination>
+      :total="data.length"
+    ></el-pagination>
   </div>
 </template>
 <script>
 import toolCard from '@components/toolCard.vue'
 export default {
-  data() {
+  data () {
     return {
       flag: false,
       currentPage1: 1,
@@ -54,7 +54,13 @@ export default {
           info: '电子图书搜索'
         },
         {
-          web_url: 'http://rainyin.com/307.html',
+          web_url: 'https://caniuse.com/',
+          img_src: 'https://caniuse.com/img/browserstack.svg',
+          title: 'Can I use',
+          info: '查询Html标签、Css属性兼容性'
+        },
+        {
+          web_url: 'https://htmlcolorcodes.com/zh/yanse-biao/',
           img_src: 'https://c.runoob.com/wp-content/uploads/2018/11/3LkGs.png',
           title: '颜色搭配表',
           info: '16进制颜色查询'
@@ -66,59 +72,59 @@ export default {
     'my-toolCard': toolCard
   },
   methods: {
-    handleSizeChange(val) {
+    handleSizeChange (val) {
       console.log(`每页 ${val} 条`)
     },
-    handleCurrentChange(val) {
+    handleCurrentChange (val) {
       console.log(`当前页: ${val}`)
     }
   }
 }
 </script>
 <style lang="less" scoped>
-  div.root {
-    height: 700px;
-    margin-top: 10px;
-    ul.tool_list {
-      width: 999px;
-      .tool_part {
-        width: 293px;
+div.root {
+  height: 700px;
+  margin-top: 10px;
+  ul.tool_list {
+    width: 999px;
+    .tool_part {
+      width: 293px;
+      float: left;
+      background: WhiteSmoke;
+      border-radius: 5px;
+      padding: 5px;
+      margin: 15px;
+      box-shadow: 0px 5px 15px Gainsboro;
+      transition: all 0.3s;
+      img {
+        width: 48px;
+        height: 48px;
         float: left;
-        background: WhiteSmoke;
-        border-radius: 5px;
-        padding: 5px;
-        margin: 15px;
-        box-shadow: 0px 5px 15px Gainsboro;
-        transition: all 0.3s;
-        img {
-          width: 48px;
-          height: 48px;
-          float: left;
-        }
-        aside {
-          float: left;
-          margin-left: 10px;
-          a {
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            color: #64854c;
-            font-size: 16px;
-            text-align: left;
-          }
-          p {
-            font-weight: bold;
-            color: #666;
-            font-size: 14px;
-            line-height: 28px;
-            height: 28px;
-          }
-        }
       }
-      .tool_part:hover {
-        // margin-top: 1px;
-        // overflow: hidden;
+      aside {
+        float: left;
+        margin-left: 10px;
+        a {
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          color: #64854c;
+          font-size: 16px;
+          text-align: left;
+        }
+        p {
+          font-weight: bold;
+          color: #666;
+          font-size: 14px;
+          line-height: 28px;
+          height: 28px;
+        }
       }
     }
+    .tool_part:hover {
+      // margin-top: 1px;
+      // overflow: hidden;
+    }
   }
+}
 </style>

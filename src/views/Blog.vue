@@ -1,6 +1,6 @@
 <template>
   <div class="wrapper">
-    <el-row >
+    <el-row>
       <el-col :span="17">
         <el-card class="box-card" shadow="always">
           <div slot="header" class="clearfix">
@@ -11,7 +11,6 @@
         </el-card>
       </el-col>
       <el-col :span="6" class="rank">
-
         <el-card class="box-card" shadow="always">
           <div slot="header" class="clearfix">
             <span>点击排行</span>
@@ -183,7 +182,8 @@ export default {
           height: 30px;
           border-radius: 50%;
           padding: 2px;
-          background: linear-gradient(to top right), rgba(0,153,255,.9), rgba(42,228,197,.7);
+          background: linear-gradient(to top right), rgba(0, 153, 255, 0.9),
+            rgba(42, 228, 197, 0.7);
           margin-right: 10px;
           position: relative;
           img {
@@ -193,7 +193,7 @@ export default {
           }
         }
         .avatar::after {
-          content: "";
+          content: '';
           position: absolute;
           top: 0px;
           right: 0px;
@@ -232,11 +232,11 @@ export default {
     height: 2px;
     bottom: 0px;
     left: 0px;
-    content: "";
+    content: '';
     display: inline-block;
     background: violet;
   }
-  ul li{
+  ul li {
     height: 30px;
     line-height: 30px;
     margin-bottom: 10px;
@@ -246,7 +246,7 @@ export default {
       text-align: center;
       line-height: 16px;
       color: white;
-      background: #FF6600;
+      background: #ff6600;
       display: inline-block;
       margin-right: 10px;
     }

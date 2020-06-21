@@ -30,13 +30,13 @@ export default {
     }
   },
   watch: {
-    $route(to, from) {
+    $route (to, from) {
       this.default_active = to.path
     }
   },
   mounted () {
     let route = this.$route.path
-    if (route === '/growUp') this.$router.push({ 'path' : '/growUp/novelCoronavirus' })
+    if (route === '/growUp') this.$router.push({ 'path': '/growUp/novelCoronavirus' })
   },
   methods: {}
 }
