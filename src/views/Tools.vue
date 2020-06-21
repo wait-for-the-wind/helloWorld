@@ -3,64 +3,64 @@
     <el-row class="tac">
       <el-col :span="4">
         <h5 class="empty_box"></h5>
-        <el-menu :default-active="default_active" class="el-menu-vertical-demo" router>
-          <el-menu-item index="/tools/goodWeb">
+        <el-menu
+          default-active="2"
+          class="el-menu-vertical-demo"
+          @open="handleOpen"
+          @close="handleClose">
+          <el-submenu index="1">
+            <template slot="title">
+              <i class="el-icon-document-copy"></i>
+              <span>导航一</span>
+            </template>
+            <el-menu-item-group>
+              <template slot="title">分组一</template>
+              <el-menu-item index="1-1">选项1</el-menu-item>
+              <el-menu-item index="1-2">选项2</el-menu-item>
+            </el-menu-item-group>
+            <el-menu-item-group title="分组2">
+              <el-menu-item index="1-3">选项3</el-menu-item>
+            </el-menu-item-group>
+            <el-submenu index="1-4">
+              <template slot="title">选项4</template>
+              <el-menu-item index="1-4-1">选项1</el-menu-item>
+            </el-submenu>
+          </el-submenu>
+          <el-menu-item index="2">
             <i class="el-icon-menu"></i>
-            <span slot="title">网站</span>
+            <span slot="title">导航二</span>
           </el-menu-item>
-          <el-menu-item index="/tools/goodTool">
+          <el-menu-item index="4">
             <i class="el-icon-menu"></i>
-            <span slot="title">工具</span>
+            <span slot="title">导航四</span>
           </el-menu-item>
-          <el-menu-item index="/tools/fronted">
+          <el-menu-item index="4">
             <i class="el-icon-menu"></i>
-            <span slot="title">前端</span>
+            <span slot="title">导航四</span>
           </el-menu-item>
-          <el-menu-item index="/tools/backend">
+          <el-menu-item index="4">
             <i class="el-icon-menu"></i>
-            <span slot="title">后端</span>
+            <span slot="title">导航四</span>
           </el-menu-item>
-          <el-menu-item index="/tools/data">
+          <el-menu-item index="4">
             <i class="el-icon-menu"></i>
-            <span slot="title">数据库</span>
+            <span slot="title">导航四</span>
+          </el-menu-item>
+          <el-menu-item index="4">
+            <i class="el-icon-menu"></i>
+            <span slot="title">导航四</span>
           </el-menu-item>
         </el-menu>
-      </el-col>
-      <el-col :span="20">
-        <router-view></router-view>
       </el-col>
     </el-row>
   </div>
 </template>
 <script>
 export default {
-  data () {
+  data() {
     return {
-      data: 1,
-      default_active: ''
-    }
-  },
-  mounted() {
-    let route = this.$route.path
-    if (route === '/tools') this.$router.push({ 'path' : '/tools/goodWeb' })
-  },
-  watch: {
-    $route(to, from) {
-      this.default_active = to.path
-    }
-  },
-  methods: {
-    handleOpen (key, keyPath) {
-      console.log(key, keyPath)
-    },
-    handleClose (key, keyPath) {
-      console.log(key, keyPath)
+      data: 1
     }
   }
 }
 </script>
-<style lang="less" scoped>
-  .empty_box {
-    height: 10px;
-  }
-</style>
