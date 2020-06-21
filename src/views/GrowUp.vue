@@ -9,7 +9,7 @@
             <span slot="title">中国疫情图</span>
           </el-menu-item>
           <el-menu-item index="/growUp/timeOver">
-            <i class="el-icon-menu"></i>
+            <i class="el-icon-video-camera"></i>
             <span slot="title">时间流水线</span>
           </el-menu-item>
         </el-menu>

@@ -15,13 +15,19 @@ export default {
           list_number: 92,
           title_date: '2020-06-21',
           sub_title: '干巴得',
-          content: '加油，还有两个月'
+          content: '加油，还有两个月，我应该就能去杭州了'
+        },
+        {
+          list_number: 77,
+          title_date: '2020-06-09',
+          sub_title: '偶然发现她有男朋友了',
+          content: '我很伤心，直到21号正在打字的我仍然反胃、不舒服'
         },
         {
           list_number: 1,
-          title_date: '2020-06-21',
-          sub_title: '干巴得',
-          content: '加油，还有两个月'
+          title_date: '2020-03-26',
+          sub_title: '我给她定了个蛋糕',
+          content: '居然和她自己买的一模一样，太巧了'
         },
         {
           list_number: 2,

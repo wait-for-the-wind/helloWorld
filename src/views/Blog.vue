@@ -7,135 +7,127 @@
             <span>个人博客</span>
             <el-button style="float: right; padding: 3px 0" type="text">更多</el-button>
           </div>
-          <!-- <div v-for="o in 4" :key="o" class="text item">
-            {{'列表内容 ' + o }}
-          </div> -->
-          <ul class="blogList">
-            <li>
-              <h3 class="blogTitle">
-                <b>【顶】</b>
-                <a href="http://10.0.204.46:8081/blog" target="_blank">新起点新开始</a>
-              </h3>
-              <span class="blogPic">
-                <a href="http://10.0.204.46:8081/blog" target="_blank">
-                  <img src="@images/pic1.jpg" alt="">
-                </a>
-              </span>
-              <div class="blogrbox">
-                <p class="blogText">如何做一个属于自己的个人博客网站，做个人博客网站的流程是什么？这是很多新手站长会遇到的问题。首先我们得给自己的个人博客网站，定一个位。用来做什么，是建立一个个人博客来写</p>
-                <p class="blogInfo">
-                  <i class="avatar">
-                    <img src="@images/avatar.jpg" alt="">
-                  </i>
-                  <span>盛·迎风</span>
-                  <span>2020-06-11</span>
-                  <i class="el-icon-view mr5"></i>
-                  <span>0</span>
-                  <i class="el-icon-chat-dot-square mr5"></i>
-                  <span>0</span>
-                  <span>【<a href="http://10.0.204.46:8081/growUp">个人信息</a>】</span>
-                  <a href="http://10.0.204.46:8081/gr" class="readMore">阅读更多</a>
-                </p>
-              </div>
-            </li>
-            <li>
-              <h3 class="blogTitle">
-                <b>【顶】</b>
-                <a href="http://10.0.204.46:8081/blog" target="_blank">新起点新开始</a>
-              </h3>
-              <span class="blogPic">
-                <a href="http://10.0.204.46:8081/blog" target="_blank">
-                  <img src="@images/pic1.jpg" alt="">
-                </a>
-              </span>
-              <div class="blogrbox">
-                <p class="blogText">如何做一个属于自己的个人博客网站，做个人博客网站的流程是什么？这是很多新手站长会遇到的问题。首先我们得给自己的个人博客网站，定一个位。用来做什么，是建立一个个人博客来写</p>
-                <p class="blogInfo">
-                  <i class="avatar">
-                    <img src="@images/avatar.jpg" alt="">
-                  </i>
-                  <span>盛·迎风</span>
-                  <span>2020-06-11</span>
-                  <span>【<a href="http://10.0.204.46:8081/growUp">个人信息</a>】</span>
-                  <a href="http://10.0.204.46:8081/gr" class="readMore">阅读更多</a>
-                </p>
-              </div>
-
-            </li>
-          </ul>
+          <my-blog-cpn :blogData="blog_data"></my-blog-cpn>
         </el-card>
       </el-col>
       <el-col :span="6" class="rank">
+
         <el-card class="box-card" shadow="always">
           <div slot="header" class="clearfix">
             <span>点击排行</span>
             <el-button style="float: right; padding: 3px 0" type="text">更多</el-button>
           </div>
-          <ul>
-            <li>
-              <i>1</i>
-              <a href="javascript:;">起点开始</a>
-            </li>
-            <li>
-              <i>2</i>
-              <a href="javascript:;">JS讲解</a>
-            </li>
-            <li>
-              <i>3</i>
-              <a href="javascript:;">起点jflksdjflsjflsdjlfjfkljsdlk543535345f开始</a>
-            </li>
-          </ul>
+          <my-rank :rank="click_rank"></my-rank>
         </el-card>
+
         <el-card class="box-card" shadow="always">
           <div slot="header" class="clearfix">
             <span>站长推荐</span>
             <el-button style="float: right; padding: 3px 0" type="text">更多</el-button>
           </div>
-          <ul>
-            <li>
-              <i>1</i>
-              <a href="javascript:;">起点开始</a>
-            </li>
-            <li>
-              <i>2</i>
-              <a href="javascript:;">JS讲解</a>
-            </li>
-            <li>
-              <i>3</i>
-              <a href="javascript:;">起点jflksdjflsjflsdjlfjfkljsdlk543535345f开始</a>
-            </li>
-          </ul>
+          <my-rank :rank="recommend_rank"></my-rank>
         </el-card>
         <el-card class="box-card" shadow="always">
           <div slot="header" class="clearfix">
             <span>来首安静得歌曲吧</span>
             <el-button style="float: right; padding: 3px 0" type="text">更多</el-button>
           </div>
-          <ul>
-            <li>
-              <i>1</i>
-              <a href="javascript:;">起点开始</a>
-            </li>
-            <li>
-              <i>2</i>
-              <a href="javascript:;">JS讲解</a>
-            </li>
-            <li>
-              <i>3</i>
-              <a href="javascript:;">起点jflksdjflsjflsdjlfjfkljsdlk543535345f开始</a>
-            </li>
-          </ul>
+          <my-rank :rank="music_rank"></my-rank>
         </el-card>
       </el-col>
     </el-row>
   </div>
 </template>
 <script>
+import blogCpn from '@components/blog/blog_components.vue'
+import rank from '@components/blog/rank.vue'
 export default {
   data () {
     return {
-      'radio': 1
+      'radio': 1,
+      blog_data: [
+        {
+          title_moifier: '顶',
+          title: '新起点新开始',
+          a_href: 'http://10.0.204.46:8081/blog',
+          img_src: 'https://www.yangqq.com/d/file/jstt/web/2019-09-24/d0d6dc103bfae7f29ce18d0c4219ff57.jpg',
+          blogText: '如何做一个属于自己的个人博客网站，做个人博客网站的流程是什么？这是很多新手站长会遇到的问题。首先我们得给自己的个人博客网站，定一个位。用来做什么，是建立一个个人博客来写',
+          autho: '盛·迎风',
+          autho_img: 'https://www.yangqq.com/skin/jxhx/images/avatar.jpg',
+          time: '2020-06-11',
+          see: 2232,
+          comment: 66,
+          autho_info: 'http://10.0.204.46:8081/growUp',
+          see_more: 'http://10.0.204.46:8081/gr'
+        },
+        {
+          title_moifier: '顶',
+          title: '新起点新开始',
+          a_href: 'http://10.0.204.46:8081/blog',
+          img_src: 'https://www.yangqq.com/d/file/jstt/web/2019-09-24/d0d6dc103bfae7f29ce18d0c4219ff57.jpg',
+          blogText: '如何做一个属于自己的个人博客网站，做个人博客网站的流程是什么？这是很多新手站长会遇到的问题。首先我们得给自己的个人博客网站，定一个位。用来做什么，是建立一个个人博客来写',
+          autho: '盛·迎风',
+          autho_img: 'https://www.yangqq.com/skin/jxhx/images/avatar.jpg',
+          time: '2020-06-11',
+          see: 99,
+          comment: 103,
+          autho_info: 'http://10.0.204.46:8081/growUp',
+          see_more: 'http://10.0.204.46:8081/gr'
+        },
+        {
+          title_moifier: '顶',
+          title: '新起点新开始',
+          a_href: 'http://10.0.204.46:8081/blog',
+          img_src: 'https://www.yangqq.com/d/file/jstt/web/2019-09-24/d0d6dc103bfae7f29ce18d0c4219ff57.jpg',
+          blogText: '如何做一个属于自己的个人博客网站，做个人博客网站的流程是什么？这是很多新手站长会遇到的问题。首先我们得给自己的个人博客网站，定一个位。用来做什么，是建立一个个人博客来写',
+          autho: '盛·迎风',
+          autho_img: 'https://www.yangqq.com/skin/jxhx/images/avatar.jpg',
+          time: '2020-06-11',
+          see: 11,
+          comment: 7567,
+          autho_info: 'http://10.0.204.46:8081/growUp',
+          see_more: 'http://10.0.204.46:8081/gr'
+        }
+      ],
+      click_rank: [
+        {
+          title: 'JS讲解',
+          title_href: 'javascript:;'
+        },
+        {
+          title: 'CSS讲解',
+          title_href: 'javascript:;'
+        }
+      ],
+      recommend_rank: [
+        {
+          title: 'XXXXXX',
+          title_href: 'javascript:;'
+        },
+        {
+          title: 'YYYYYYY',
+          title_href: 'javascript:;'
+        }
+      ],
+      music_rank: [
+        {
+          title: '等你下课',
+          title_href: 'javascript:;'
+        },
+        {
+          title: '世界美好与你环环相扣',
+          title_href: 'javascript:;'
+        },
+        {
+          title: '推开世界的门',
+          title_href: 'javascript:;'
+        }
+      ]
     }
+  },
+  components: {
+    'my-blog-cpn': blogCpn,
+    'my-rank': rank
   }
 }
 </script>
@@ -166,7 +158,7 @@ export default {
       vertical-align: top;
       overflow: hidden;
       img {
-         animation: 5s all;
+        animation: 5s all;
       }
       img:hover {
         transform: scale(1.2);
