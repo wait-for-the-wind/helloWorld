@@ -13,6 +13,7 @@ module.exports = {
     config.resolve.alias
       .set('@images', resolve('src/assets/images'))
       .set('@js', resolve('src/assets/js'))
+      .set('@components', resolve('src/components'))
   },
   // 跨域
   devServer: {

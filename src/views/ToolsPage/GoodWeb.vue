@@ -2,78 +2,82 @@
   <div class="root">
     <el-row class="tac">
       <el-col :span="4">
-        <ul class="tool_list">
-          <li class="tool_part">
-            <a href="https://c.runoob.com/compile/5577" target="_blank">
-              <img src="@images/typescript.png" alt="">
-            </a>
-            <aside>
-              <a href="https://c.runoob.com/compile/5577" target="_blank"><h5>TS 在线工具</h5></a>
-              <p>在线编译、运行 TS 代码</p>
-            </aside>
-          </li>
-          <li class="tool_part">
-            <a href="https://c.runoob.com/front-end/51" target="_blank">
-              <img src="@images/js.png" alt="">
-            </a>
-            <aside>
-              <a href="https://c.runoob.com/front-end/51" target="_blank"><h5>JS 压缩/解压工具</h5></a>
-              <p>在线压缩/解压 JS 代码</p>
-            </aside>
-          </li>
-          <li class="tool_part">
-            <a href="https://c.runoob.com/front-end/52" target="_blank">
-              <img src="@images/css.png" alt="">
-            </a>
-            <aside>
-              <a href="https://c.runoob.com/front-end/52" target="_blank"><h5>CSS 压缩/解压工具</h5></a>
-              <p>在线压缩/解压 CSS 代码</p>
-            </aside>
-          </li>
-          <li class="tool_part">
-            <a href="https://c.runoob.com/front-end/5580" target="_blank">
-              <img src="@images/count-word.png" alt="">
-            </a>
-            <aside>
-              <a href="https://c.runoob.com/front-end/5580" target="_blank"><h5>在线字数统计工具</h5></a>
-              <p>汉字、原文、符号统计</p>
-            </aside>
-          </li>
-          <li class="tool_part">
-            <a href="https://www.jiumodiary.com/" target="_blank">
-              <img src="@images/eleps.png" alt="">
-            </a>
-            <aside>
-              <a href="https://www.jiumodiary.com/" target="_blank"><h5>鸠摩搜索</h5></a>
-              <p>电子图书搜索</p>
-            </aside>
-          </li>
-          <li class="tool_part">
-            <a href="http://rainyin.com/307.html" target="_blank">
-              <img src="@images/color.jpg" alt="">
-            </a>
-            <aside>
-              <a href="http://rainyin.com/307.html" target="_blank"><h5>颜色搭配表</h5></a>
-              <p>16进制颜色查询</p>
-            </aside>
-          </li>
-        </ul>
+        <my-toolCard :toolData="data"></my-toolCard>
       </el-col>
     </el-row>
+    <el-pagination
+      @size-change="handleSizeChange"
+      @current-change="handleCurrentChange"
+      :current-page.sync="currentPage1"
+      :page-size="24"
+      layout="total, prev, pager, next"
+      :total="data.length">
+    </el-pagination>
   </div>
 </template>
 <script>
+import toolCard from '@components/toolCard.vue'
 export default {
   data() {
     return {
-      flag: false
+      flag: false,
+      currentPage1: 1,
+      data: [
+        {
+          web_url: 'https://c.runoob.com/compile/5577',
+          img_src: 'https://c.runoob.com/wp-content/uploads/2019/05/typescript.png',
+          title: 'TS 在线工具',
+          info: '在线编译、运行 TS 代码'
+        },
+        {
+          web_url: 'https://c.runoob.com/front-end/51',
+          img_src: 'https://c.runoob.com/wp-content/uploads/2016/01/js.png',
+          title: 'JS 压缩/解压工具',
+          info: '在线压缩/解压 JS 代码'
+        },
+        {
+          web_url: 'https://c.runoob.com/front-end/52',
+          img_src: 'https://c.runoob.com/wp-content/uploads/2016/01/css.png',
+          title: 'CSS 压缩/解压工具',
+          info: '在线压缩/解压 CSS 代码'
+        },
+        {
+          web_url: 'https://c.runoob.com/front-end/5580',
+          img_src: 'https://c.runoob.com/wp-content/uploads/2019/05/count-word.png',
+          title: '在线字数统计工具',
+          info: '汉字、原文、符号统计'
+        },
+        {
+          web_url: 'https://www.jiumodiary.com/',
+          img_src: 'https://www5.jiumodiary.com/images/front/eleps.png',
+          title: '鸠摩搜索',
+          info: '电子图书搜索'
+        },
+        {
+          web_url: 'http://rainyin.com/307.html',
+          img_src: 'https://c.runoob.com/wp-content/uploads/2018/11/3LkGs.png',
+          title: '颜色搭配表',
+          info: '16进制颜色查询'
+        }
+      ]
+    }
+  },
+  components: {
+    'my-toolCard': toolCard
+  },
+  methods: {
+    handleSizeChange(val) {
+      console.log(`每页 ${val} 条`)
+    },
+    handleCurrentChange(val) {
+      console.log(`当前页: ${val}`)
     }
   }
 }
 </script>
 <style lang="less" scoped>
   div.root {
-    height: 800px;
+    height: 700px;
     margin-top: 10px;
     ul.tool_list {
       width: 999px;

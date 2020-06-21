@@ -55,7 +55,7 @@ export default {
     ...mapState(['count'])
   },
   mounted () {
-    
+    this.checkUndefind()
   },
   methods: {
     ...mapMutations(['add', 'sub', 'subN']),

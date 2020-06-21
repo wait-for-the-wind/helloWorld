@@ -95,7 +95,7 @@ body {
     height: 5px;
     content: '';
     position: absolute;
-    top: 0;
+    top: -5px;
     width: 100%;
   }
 }
@@ -125,9 +125,17 @@ body {
     margin-left: 380px;
   }
 }
-footer {
-  text-align: center;
-  height: 40px;
-  line-height: 10px;
+#app {
+  position: relative;
+  footer {
+    position: absolute;
+    bottom: -100px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    height: 30px;
+    line-height: 10px;
+  }
+
 }
 </style>
