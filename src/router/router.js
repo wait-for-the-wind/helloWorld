@@ -35,6 +35,13 @@ export default [
     ]
   }, // 路由懒加载
   // 后台
-  { path: '/admin', name: 'admin', component: () => import('../views/admin.vue') }, // 路由懒加载
+  {
+    path: '/admin',
+    name: 'admin',
+    component: () => import('../views/admin.vue'),
+    children: [
+      { path: 'tool', name: 'tool', component: () => import('../views/AdminPages/toolAdmin.vue') }
+    ]
+  }, // 路由懒加载
   { path: '*', name: 'home', component: () => import('../views/Home.vue') } // 路由懒加载
 ]
