@@ -7,7 +7,7 @@ function resolve(dir) {
 }
 // webpack.config.js
 module.exports = {
-  // 路径别名
+  // 1\路径别名
   lintOnSave: true,
   chainWebpack: config => {
     config.resolve.alias
@@ -15,8 +15,9 @@ module.exports = {
       .set('@js', resolve('src/assets/js'))
       .set('@components', resolve('src/components'))
   },
-  // 跨域
+  // 2\跨域
   devServer: {
     proxy: 'http://api.2217.com'
   }
+  // eslint 检测
 }

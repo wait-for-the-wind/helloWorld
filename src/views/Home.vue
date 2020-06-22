@@ -1,5 +1,21 @@
 <template>
   <div class="home">
+    <el-row style="height: 309px;">
+      <el-col :span="17">
+        <my-swper :imglist="img_list"></my-swper>
+      </el-col>
+      <el-col :span="6" class="my_info">
+        <!-- 个人信息 -->
+        <el-card class="box-card" body-style="background: #d3d3d3;height:258px;">
+          <h2>盛·迎风的名片</h2>
+          <p>职业：web前端开发</p>
+          <p>现居：江西省-南昌市</p>
+          <p>公司：江西中至科技有限公司</p>
+          <p>Email：739178270@qq.com</p>
+          <p>tel：18368490621</p>
+        </el-card>
+      </el-col>
+    </el-row>
     <el-row class="tac">
       <el-col :span="17">
         <el-card class="box-card">
@@ -64,6 +80,7 @@
 
 <script>
 import rank from '@components/blog/rank.vue'
+import swper from '@components/swper.vue'
 import { mapMutations, mapState } from 'vuex'
 import axios from 'axios'
 export default {
@@ -108,6 +125,28 @@ export default {
           title: '推开世界的门',
           title_href: 'javascript:;'
         }
+      ],
+      img_list: [
+        {
+          id: 0,
+          img_url: require('../assets/images/swper/1.jpg')
+        },
+        {
+          id: 1,
+          img_url: require('../assets/images/swper/2.jpg')
+        },
+        {
+          id: 2,
+          img_url: require('../assets/images/swper/3.jpg')
+        },
+        {
+          id: 3,
+          img_url: require('../assets/images/swper/4.jpg')
+        },
+        {
+          id: 4,
+          img_url: require('../assets/images/swper/5.jpg')
+        }
       ]
     }
   },
@@ -119,7 +158,8 @@ export default {
     this.checkUndefind()
   },
   components: {
-    'my-rank': rank
+    'my-rank': rank,
+    'my-swper': swper
   },
   methods: {
     ...mapMutations(['add', 'sub', 'subN']),
@@ -205,7 +245,22 @@ p {
 .box-card {
   margin-bottom: 10px;
 }
-.rank {
+.my_info {
+  height: 300px;
+  background: pink;
+  h2{
+    // margin: 0px;
+    color: #333;
+    font-size: 18px;
+    font-weight: 600;
+  }
+  p {
+    margin: 25px 0;
+    text-align: left;
+    text-indent: 1em;
+  }
+}
+.rank,.my_info {
   margin-left: 30px;
   .clearfix {
     text-align: left;
