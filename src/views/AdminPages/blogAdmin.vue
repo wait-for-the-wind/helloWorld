@@ -1,33 +1,22 @@
-
 <template>
   <div>
+    <!-- 博客管理页面，这里最好能使用 md  编辑文档，autho 信息从登录那获取 -->
     <el-row>
       <el-col :span="4" class="center">
-          工具名称：
+        博客主标题：
       </el-col>
       <el-col :span="8">
           <el-input
-            placeholder="请输入工具名称"
+            placeholder="请输入博客主标题"
             prefix-icon="el-icon-date"
             v-model="input1">
           </el-input>
       </el-col>
     </el-row>
+
     <el-row style="margin-top: 15px;">
       <el-col :span="4" class="center">
-          工具详情：
-      </el-col>
-      <el-col :span="8">
-          <el-input
-            placeholder="请输入工具详情"
-            prefix-icon="el-icon-date"
-            v-model="input1">
-          </el-input>
-      </el-col>
-    </el-row>
-    <el-row style="margin-top: 15px;">
-      <el-col :span="4" class="center">
-          上传图片：
+          上传展示图片：
       </el-col>
       <el-col :span="8" style="text-align: left;">
         <el-upload
@@ -45,11 +34,6 @@
         </el-upload>
       </el-col>
     </el-row>
-    <el-row style="margin-top: 15px;">
-      <el-col :span="1" style="margin-left: 170px;">
-        <el-button type="primary" plain>提交</el-button>
-      </el-col>
-    </el-row>
   </div>
 </template>
 <script>
@@ -60,13 +44,11 @@ export default {
       input1: '',
       fileList: [
         { name: 'food.jpeg', url: 'https://fuss10.elemecdn.com/3/63/4e7f3a15429bfda99bce42a18cdd1jpeg.jpeg?imageMogr2/thumbnail/360x360/format/webp/quality/100' },
-        { name: 'food2.jpeg', url: 'https://fuss10.elemecdn.com/3/63/4e7f3a15429bfda99bce42a18cdd1jpeg.jpeg?imageMogr2/thumbnail/360x360/format/webp/quality/100' }
+        {name: 'food2.jpeg', url: 'https://fuss10.elemecdn.com/3/63/4e7f3a15429bfda99bce42a18cdd1jpeg.jpeg?imageMogr2/thumbnail/360x360/format/webp/quality/100'}
       ]
     }
   },
-  mounted() {
-    console.log('123', 123)
-  },
+  mounted() {},
   methods: {
     handleRemove(file, fileList) {
       console.log(file, fileList)

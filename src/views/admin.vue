@@ -23,11 +23,10 @@
               <span slot="title">工具管理</span>
             </template>
             <el-menu-item-group>
-              <!-- <template slot="title"></template> -->
               <el-menu-item index="/admin/tool">添加工具</el-menu-item>
             </el-menu-item-group>
           </el-submenu>
-          <el-menu-item index="/admin/tool/12">
+          <el-menu-item index="/admin/blog">
             <i class="el-icon-edit"></i>
             <span slot="title">博客管理</span>
           </el-menu-item>

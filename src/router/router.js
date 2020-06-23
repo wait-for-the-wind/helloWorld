@@ -40,7 +40,8 @@ export default [
     name: 'admin',
     component: () => import('../views/admin.vue'),
     children: [
-      { path: 'tool', name: 'tool', component: () => import('../views/AdminPages/toolAdmin.vue') }
+      { path: 'tool', name: 'tool', component: () => import('../views/AdminPages/toolAdmin.vue') },
+      { path: 'blog', name: 'blog', component: () => import('../views/AdminPages/blogAdmin.vue') }
     ]
   }, // 路由懒加载
   { path: '*', name: 'home', component: () => import('../views/Home.vue') } // 路由懒加载

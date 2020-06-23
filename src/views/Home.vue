@@ -6,7 +6,7 @@
       </el-col>
       <el-col :span="6" class="my_info">
         <!-- 个人信息 -->
-        <el-card class="box-card" body-style="background: #d3d3d3;height:258px;">
+        <el-card class="box-card" body-style="background: #F7F9F9;height:258px;">
           <h2>盛·迎风的名片</h2>
           <p>职业：web前端开发</p>
           <p>现居：江西省-南昌市</p>
@@ -20,7 +20,7 @@
       <el-col :span="17">
         <el-card class="box-card">
           <el-tabs v-model="activeName" @tab-click="handleClick">
-            <el-tab-pane label="用户管理" name="first">
+            <el-tab-pane label="博客日记" name="first">
               <el-row class="tac">
                 <el-col :span="8">
                   <ul class="lbox">
@@ -39,13 +39,17 @@
                   </ul>
                 </el-col>
                 <el-col :span="16">
-                  <div class="rbox">313123</div>
+                  <el-collapse v-model="activeName1" accordion class="news_list" @change="changeCollapse($event)">
+                    <el-collapse-item :title="item.new_title" :name="index" v-for="(item, index) in news_list" :key="item.id" class="news_part">
+                      <p>{{item.new_info}}</p>
+                    </el-collapse-item>
+                  </el-collapse>
                 </el-col>
               </el-row>
             </el-tab-pane>
-            <el-tab-pane label="配置管理" name="second">配置管理</el-tab-pane>
-            <el-tab-pane label="角色管理" name="third">角色管理</el-tab-pane>
-            <el-tab-pane label="定时任务补偿" name="fourth">定时任务补偿</el-tab-pane>
+            <el-tab-pane label="码农生涯" name="second">这是一辈子的事儿了，用心去感受</el-tab-pane>
+            <el-tab-pane label="旅游计划" name="third">我是个爱出去的人儿啊</el-tab-pane>
+            <el-tab-pane label="JS&Vue" name="fourth">技术补充站</el-tab-pane>
           </el-tabs>
         </el-card>
       </el-col>
@@ -92,6 +96,8 @@ export default {
       img_width: 0,
       img_height: 0,
       activeName: 'first',
+      activeName1: '1',
+      // 点击排行
       click_rank: [
         {
           title: 'JS讲解',
@@ -102,6 +108,7 @@ export default {
           title_href: 'javascript:;'
         }
       ],
+      // 推荐排行
       recommend_rank: [
         {
           title: 'XXXXXX',
@@ -112,6 +119,7 @@ export default {
           title_href: 'javascript:;'
         }
       ],
+      // 音乐推荐
       music_rank: [
         {
           title: '等你下课',
@@ -126,6 +134,7 @@ export default {
           title_href: 'javascript:;'
         }
       ],
+      // 轮播图
       img_list: [
         {
           id: 0,
@@ -147,6 +156,34 @@ export default {
           id: 4,
           img_url: require('../assets/images/swper/5.jpg')
         }
+      ],
+      // 新闻列表
+      news_list: [
+        {
+          new_title: ' 我仅仅是一个“草根站长”',
+          new_info: '虽然也经历了被人质疑、嘲笑和不屑。但是我始终坚信自己的选择是正确的。并把他们的这些不屑变成更强的动力，去追逐成功。网上很多说个人博客末落了，说的是第',
+          new_id: 1
+        },
+        {
+          new_title: ' 我仅仅是一个“草根站长”',
+          new_info: '虽然也经历了被人质疑、嘲笑和不屑。但是我始终坚信自己的选择是正确的。并把他们的这些不屑变成更强的动力，去追逐成功。网上很多说个人博客末落了，说的是第',
+          new_id: 2
+        },
+        {
+          new_title: ' 我仅仅是一个“草根站长”',
+          new_info: '虽然也经历了被人质疑、嘲笑和不屑。但是我始终坚信自己的选择是正确的。并把他们的这些不屑变成更强的动力，去追逐成功。网上很多说个人博客末落了，说的是第',
+          new_id: 3
+        },
+        {
+          new_title: ' 我仅仅是一个“草根站长”',
+          new_info: '虽然也经历了被人质疑、嘲笑和不屑。但是我始终坚信自己的选择是正确的。并把他们的这些不屑变成更强的动力，去追逐成功。网上很多说个人博客末落了，说的是第',
+          new_id: 4
+        },
+        {
+          new_title: ' 我仅仅是一个“草根站长”',
+          new_info: '虽然也经历了被人质疑、嘲笑和不屑。但是我始终坚信自己的选择是正确的。并把他们的这些不屑变成更强的动力，去追逐成功。网上很多说个人博客末落了，说的是第',
+          new_id: 5
+        }
       ]
     }
   },
@@ -163,15 +200,13 @@ export default {
   },
   methods: {
     ...mapMutations(['add', 'sub', 'subN']),
-    // showBigImg(event) {
-    //   // console.log('event', event)
-    //   var $img = event.target
-    //   // console.log('$img', $img)
-    //   // console.log('$img', $img.innerHtml)
-    //   if ($img.tagName.indexOf('IMG') > -1) {
-    //     $img.style.transform = 'scale(1.2)'
-    //   }
-    // },
+    // 新闻板块
+    changeCollapse(e) {
+      console.log('e', e)
+      if (e !== '') {
+        
+      }
+    },
     handleClick (tab, event) {
       console.log(tab, event)
     },
@@ -193,6 +228,7 @@ export default {
 .home {
   width: 1200px;
   margin: 0 auto;
+  counter-reset:sectioncounter; // 自动增加序号的这个需要写在根标签下
 }
 p {
   text-align: center;
@@ -201,7 +237,8 @@ p {
 .lbox {
   width: 100%;
   li {
-    height: 100px;
+    // 正常情况 115 合适 展开时候 150合适
+    height: 150px;
     width: 275px;
     overflow: hidden;
     position: relative;
@@ -247,7 +284,6 @@ p {
 }
 .my_info {
   height: 300px;
-  background: pink;
   h2{
     // margin: 0px;
     color: #333;
@@ -300,6 +336,45 @@ p {
       text-overflow: ellipsis;
       white-space: nowrap;
       vertical-align: -29%;
+    }
+  }
+}
+.news_list {
+  text-align: left;
+  width: 500px;
+  margin-left: 20px;
+  .news_part {
+    min-height: 32px;
+    a:before {
+      counter-increment:sectioncounter;
+      content: counter(sectioncounter) " ";
+      line-height: 20px;
+      width: 20px;
+      background: black;
+      color: #fff;
+      text-align: center;
+      display: inline-block;
+      font-weight: 500;
+    }
+    a {
+      color: black;
+      font-weight: 700;
+      line-height: 24px;
+      font-size: 14px;
+    }
+    p {
+      margin: 0;
+      text-align: left;
+      text-indent: 1em;
+      // 文字展示两行，多余省略号
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 2;
+      height: 48px;
+      font-size: 14px;
+      line-height: 22px;
     }
   }
 }

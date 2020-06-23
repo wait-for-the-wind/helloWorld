@@ -12,7 +12,7 @@
           </a>
         </span>
         <div class="blogrbox">
-          <p class="blogText">{{item.blogText}}</p>
+          <p class="blogText" @click="readInfo(item)">{{item.blogText}}</p>
           <p class="blogInfo">
             <i class="avatar">
               <img :src="item.autho_img" alt="">
@@ -40,7 +40,11 @@ export default {
   },
   props: ['blogData'],
   mounted() {},
-  methods: {}
+  methods: {
+    readInfo(item) {
+      console.log('123', item)
+    }
+  }
 }
 </script>
 <style lang='less' scoped>

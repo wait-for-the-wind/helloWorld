@@ -57,7 +57,8 @@ export default {
           see: 2232,
           comment: 66,
           autho_info: 'http://10.0.204.46:8081/growUp',
-          see_more: 'http://10.0.204.46:8081/gr'
+          see_more: 'http://10.0.204.46:8081/gr',
+          id: 1
         },
         {
           title_moifier: '顶',
@@ -71,7 +72,8 @@ export default {
           see: 99,
           comment: 103,
           autho_info: 'http://10.0.204.46:8081/growUp',
-          see_more: 'http://10.0.204.46:8081/gr'
+          see_more: 'http://10.0.204.46:8081/gr',
+          id: 2
         },
         {
           title_moifier: '顶',
@@ -85,7 +87,8 @@ export default {
           see: 11,
           comment: 7567,
           autho_info: 'http://10.0.204.46:8081/growUp',
-          see_more: 'http://10.0.204.46:8081/gr'
+          see_more: 'http://10.0.204.46:8081/gr',
+          id: 3
         }
       ],
       click_rank: [

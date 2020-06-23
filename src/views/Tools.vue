@@ -2,7 +2,6 @@
   <div class="about wrapper">
     <el-row class="tac">
       <el-col :span="4">
-        <h5 class="empty_box"></h5>
         <el-menu :default-active="default_active" class="el-menu-vertical-demo" router>
           <el-menu-item index="/tools/goodWeb">
             <i class="el-icon-menu"></i>
@@ -12,10 +11,20 @@
             <i class="el-icon-menu"></i>
             <span slot="title">工具</span>
           </el-menu-item>
-          <el-menu-item index="/tools/fronted">
-            <i class="el-icon-menu"></i>
-            <span slot="title">前端</span>
-          </el-menu-item>
+          <!-- 前端 -->
+          <el-submenu index="1">
+            <template slot="title">
+              <i class="el-icon-menu"></i>
+              <span slot="title">前端</span>
+            </template>
+            <el-menu-item-group>
+              <el-menu-item index="/tools/fronted">HTML</el-menu-item>
+              <el-menu-item index="1-3">CSS</el-menu-item>
+              <el-menu-item index="1-3">JavaScript</el-menu-item>
+              <el-menu-item index="1-3">Vue</el-menu-item>
+            </el-menu-item-group>
+          </el-submenu>
+          <!-- 后端 -->
           <el-menu-item index="/tools/backend">
             <i class="el-icon-menu"></i>
             <span slot="title">后端</span>
@@ -24,6 +33,7 @@
             <i class="el-icon-menu"></i>
             <span slot="title">数据库</span>
           </el-menu-item>
+
         </el-menu>
       </el-col>
       <el-col :span="20">
@@ -60,7 +70,4 @@ export default {
 }
 </script>
 <style lang="less" scoped>
-  .empty_box {
-    height: 10px;
-  }
 </style>
