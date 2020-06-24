@@ -8,7 +8,7 @@ import api from './api/api'
 // -> vue 根本不支持 ie 7 8
 import 'babel-polyfill'
 // 引入全局样式
-import '@/assets/global.css'
+import '@/assets/global.less'
 // 引入elementUI以及CSS样式
 import elementUI from 'element-ui'
 // 这种导入相同与直接可以使用了

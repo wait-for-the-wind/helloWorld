@@ -17,7 +17,7 @@
             text-color="#fff"
             active-text-color="#ffd04b">
             <el-menu-item index="/home">网站首页</el-menu-item>
-            <el-menu-item index="/tools">工具集锦</el-menu-item>
+            <el-menu-item index="/tools">巧夺天工</el-menu-item>
             <el-menu-item index="/blog">每日一文</el-menu-item>
             <el-menu-item index="/growUp">成长历程</el-menu-item>
           </el-menu>
