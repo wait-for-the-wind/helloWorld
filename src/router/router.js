@@ -16,7 +16,7 @@ export default [
     children: [
       { path: 'goodWeb', name: 'goodWeb', component: () => import('../views/ToolsPage/GoodWeb.vue') },
       { path: 'goodTool', component: () => import('../views/ToolsPage/goodTool.vue') },
-      { path: 'fronted', component: () => import('../views/ToolsPage/fronted.vue') },
+      { path: 'html', component: () => import('../views/ToolsPage/html.vue') },
       { path: 'backend', component: () => import('../views/ToolsPage/backend.vue') },
       { path: 'data', component: () => import('../views/ToolsPage/data.vue') }
     ]

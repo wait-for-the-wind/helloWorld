@@ -64,6 +64,12 @@ export default {
           img_src: 'https://c.runoob.com/wp-content/uploads/2018/11/3LkGs.png',
           title: '颜色搭配表',
           info: '16进制颜色查询'
+        },
+        {
+          web_url: 'https://www.npmjs.com/',
+          img_src: require('../../assets/images/npm.png'),
+          title: 'npm安装包查询',
+          info: '在线查询包的下载情况、下载指令'
         }
       ]
     }

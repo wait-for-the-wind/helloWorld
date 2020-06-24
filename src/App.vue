@@ -22,8 +22,8 @@
             active-text-color="#ffd04b"
           >
             <el-menu-item index="/home">网站首页</el-menu-item>
-            <el-menu-item index="/tools">巧夺天工</el-menu-item>
-            <el-menu-item index="/blog">每日一文</el-menu-item>
+            <el-menu-item index="/tools">前端开发</el-menu-item>
+            <el-menu-item index="/blog">鸡汤博文</el-menu-item>
             <el-menu-item index="/growUp">个人经历</el-menu-item>
             <el-menu-item index="/admin">后台</el-menu-item>
           </el-menu>

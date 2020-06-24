@@ -23,7 +23,7 @@
             <el-tab-pane label="博客日记" name="first">
               <el-row class="tac">
                 <el-col :span="8">
-                  <ul class="lbox">
+                  <ul class="lbox" ref="img_list">
                     <li>
                       <a href>
                         <img src="@images/show1.jpg" alt />
@@ -193,6 +193,7 @@ export default {
   },
   mounted () {
     this.checkUndefind()
+    // this.changeCollapse()
   },
   components: {
     'my-rank': rank,
@@ -202,9 +203,17 @@ export default {
     ...mapMutations(['add', 'sub', 'subN']),
     // 新闻板块
     changeCollapse(e) {
-      console.log('e', e)
+      var $lis = this.$refs.img_list.getElementsByTagName('li')
       if (e !== '') {
-        
+        $lis.forEach(item => {
+          item.style.height = '150px'
+          item.style.transition = 'all 0.3s'
+        })
+        // this.$refs.img_list
+      } else {
+        $lis.forEach(item => {
+          item.style.height = '115px'
+        })
       }
     },
     handleClick (tab, event) {
@@ -238,7 +247,7 @@ p {
   width: 100%;
   li {
     // 正常情况 115 合适 展开时候 150合适
-    height: 150px;
+    height: 115px;
     width: 275px;
     overflow: hidden;
     position: relative;
