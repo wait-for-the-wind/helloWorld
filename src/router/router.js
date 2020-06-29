@@ -17,6 +17,9 @@ export default [
       { path: 'goodWeb', name: 'goodWeb', component: () => import('../views/ToolsPage/GoodWeb.vue') },
       { path: 'goodTool', component: () => import('../views/ToolsPage/goodTool.vue') },
       { path: 'html', component: () => import('../views/ToolsPage/html.vue') },
+      { path: 'css', component: () => import('../views/ToolsPage/css.vue') },
+      { path: 'js', component: () => import('../views/ToolsPage/js.vue') },
+      { path: 'vue', component: () => import('../views/ToolsPage/vue.vue') },
       { path: 'backend', component: () => import('../views/ToolsPage/backend.vue') },
       { path: 'data', component: () => import('../views/ToolsPage/data.vue') }
     ]

@@ -46,8 +46,11 @@ export default {
   body{
     .swiper-slide {
       height: 236px;
-      width: 601px;
+      width: 650px;
       // background: #d3d3d3;
+      img {
+        width: 100%;
+      }
     }
   }
 </style>

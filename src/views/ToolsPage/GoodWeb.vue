@@ -28,42 +28,6 @@ export default {
           img_src: 'https://c.runoob.com/wp-content/uploads/2019/05/typescript.png',
           title: 'TS 在线工具',
           info: '在线编译、运行 TS 代码'
-        },
-        {
-          web_url: 'https://c.runoob.com/front-end/51',
-          img_src: 'https://c.runoob.com/wp-content/uploads/2016/01/js.png',
-          title: 'JS 压缩/解压工具',
-          info: '在线压缩/解压 JS 代码'
-        },
-        {
-          web_url: 'https://c.runoob.com/front-end/52',
-          img_src: 'https://c.runoob.com/wp-content/uploads/2016/01/css.png',
-          title: 'CSS 压缩/解压工具',
-          info: '在线压缩/解压 CSS 代码'
-        },
-        {
-          web_url: 'https://c.runoob.com/front-end/5580',
-          img_src: 'https://c.runoob.com/wp-content/uploads/2019/05/count-word.png',
-          title: '在线字数统计工具',
-          info: '汉字、原文、符号统计'
-        },
-        {
-          web_url: 'https://www.jiumodiary.com/',
-          img_src: 'https://www5.jiumodiary.com/images/front/eleps.png',
-          title: '鸠摩搜索',
-          info: '电子图书搜索'
-        },
-        {
-          web_url: 'https://caniuse.com/',
-          img_src: 'https://caniuse.com/img/browserstack.svg',
-          title: 'Can I use',
-          info: '查询Html标签、Css属性兼容性'
-        },
-        {
-          web_url: 'https://htmlcolorcodes.com/zh/yanse-biao/',
-          img_src: 'https://c.runoob.com/wp-content/uploads/2018/11/3LkGs.png',
-          title: '颜色搭配表',
-          info: '16进制颜色查询'
         }
       ]
     }

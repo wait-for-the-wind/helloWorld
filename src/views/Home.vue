@@ -23,20 +23,8 @@
             <el-tab-pane label="博客日记" name="first">
               <el-row class="tac">
                 <el-col :span="8">
-                  <ul class="lbox" ref="img_list">
-                    <li>
-                      <a href>
-                        <img src="@images/show1.jpg" alt />
-                      </a>
-                      <span>兴趣支撑梦想，兴趣是支撑我自己前行的动力</span>
-                    </li>
-                    <li>
-                      <a href>
-                        <img src="@images/show1.jpg" alt />
-                      </a>
-                      <span>忙碌是自由活着的一种底气</span>
-                    </li>
-                  </ul>
+                  <!-- 这是图片组件 -->
+                  <my-img :data="img_data"></my-img>
                 </el-col>
                 <el-col :span="16">
                   <el-collapse v-model="activeName1" accordion class="news_list" @change="changeCollapse($event)">
@@ -47,7 +35,9 @@
                 </el-col>
               </el-row>
             </el-tab-pane>
-            <el-tab-pane label="码农生涯" name="second">这是一辈子的事儿了，用心去感受</el-tab-pane>
+            <el-tab-pane label="码农生涯" name="second">
+              
+            </el-tab-pane>
             <el-tab-pane label="旅游计划" name="third">我是个爱出去的人儿啊</el-tab-pane>
             <el-tab-pane label="JS&Vue" name="fourth">技术补充站</el-tab-pane>
           </el-tabs>
@@ -87,6 +77,7 @@ import rank from '@components/blog/rank.vue'
 import swper from '@components/swper.vue'
 import { mapMutations, mapState } from 'vuex'
 import axios from 'axios'
+import img from '@components/blog/img_list.vue'
 export default {
   data () {
     return {
@@ -160,8 +151,8 @@ export default {
       // 新闻列表
       news_list: [
         {
-          new_title: ' 我仅仅是一个“草根站长”',
-          new_info: '虽然也经历了被人质疑、嘲笑和不屑。但是我始终坚信自己的选择是正确的。并把他们的这些不屑变成更强的动力，去追逐成功。网上很多说个人博客末落了，说的是第',
+          new_title: ' 父组件如何修改子组件得dom',
+          new_info: '当我点击手风琴时候，想让左侧图片得高度发生变化，但因为这是个子组件，我没办法直接获取子组件dom并加以修改，暂时先放一放',
           new_id: 1
         },
         {
@@ -184,6 +175,17 @@ export default {
           new_info: '虽然也经历了被人质疑、嘲笑和不屑。但是我始终坚信自己的选择是正确的。并把他们的这些不屑变成更强的动力，去追逐成功。网上很多说个人博客末落了，说的是第',
           new_id: 5
         }
+      ],
+      // 图片
+      img_data: [
+        {
+          img_title: '兴趣支撑梦想，兴趣是支撑我自己前行的动力',
+          img_url: require('../assets/images/show1.jpg')
+        },
+        {
+          img_title: '乘风破浪会有时，直挂云帆济沧海',
+          img_url: require('../assets/images/show1.jpg')
+        }
       ]
     }
   },
@@ -197,12 +199,14 @@ export default {
   },
   components: {
     'my-rank': rank,
-    'my-swper': swper
+    'my-swper': swper,
+    'my-img': img
   },
   methods: {
     ...mapMutations(['add', 'sub', 'subN']),
     // 新闻板块
     changeCollapse(e) {
+      console.log('this.$refs', this.$refs)
       var $lis = this.$refs.img_list.getElementsByTagName('li')
       if (e !== '') {
         $lis.forEach(item => {
@@ -242,51 +246,6 @@ export default {
 p {
   text-align: center;
   margin: 50px;
-}
-.lbox {
-  width: 100%;
-  li {
-    // 正常情况 115 合适 展开时候 150合适
-    height: 115px;
-    width: 275px;
-    overflow: hidden;
-    position: relative;
-    margin-bottom: 15px;
-    a {
-      display: block;
-      // position: absolute;
-      // transform: translate(-50%);
-      img {
-        width: 275px;
-        transition: all 0.5s;
-        opacity: 0.7;
-        filter: blur(2px);
-        // filter: grayscale(0.5);
-        display: block;
-      }
-      img:hover {
-        transform: scale(1.2);
-        filter: blur(0px);
-        opacity: 1;
-      }
-    }
-    span {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      width: 195px;
-      height: 44px;
-      transform: translate(-50%, -50%);
-      display: block;
-      color: #ff0000;
-      font-weight: 600;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      -webkit-box-orient: vertical;
-      display: -webkit-box;
-      -webkit-line-clamp: 2;
-    }
-  }
 }
 .box-card {
   margin-bottom: 10px;

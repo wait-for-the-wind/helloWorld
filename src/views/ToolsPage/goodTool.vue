@@ -55,7 +55,7 @@ export default {
         },
         {
           web_url: 'https://caniuse.com/',
-          img_src: 'https://caniuse.com/img/browserstack.svg',
+          img_src: require('../../assets/images/CanIUse.png'),
           title: 'Can I use',
           info: '查询Html标签、Css属性兼容性'
         },
@@ -70,6 +70,18 @@ export default {
           img_src: require('../../assets/images/npm.png'),
           title: 'npm安装包查询',
           info: '在线查询包的下载情况、下载指令'
+        },
+        {
+          web_url: 'https://unicode-table.com/cn/',
+          img_src: require('../../assets/images/Unicode.png'),
+          title: 'Unicode 字符百科',
+          info: '文字、表情、字母 Unicode 值查询'
+        },
+        {
+          web_url: 'http://www.blpack.com/',
+          img_src: require('../../assets/images/MOMO.png'),
+          title: 'MOMO 百度文库下载',
+          info: '账号236274515密码862435'
         }
       ]
     }
