@@ -2,7 +2,7 @@
   <div class="blog">
     <ul>
       <li>
-        <h5><a href="javascript:;">Jquery初步学习!</a></h5>
+        <h5><router-link to="/tools/blogInfo/">Jquery初步学习!</router-link></h5>
         <dl>
           <dt><a href="javascript:;"><img src="@images/avatar_2.jpg" alt=""></a></dt>
           <dd class="author"><a href="javascript:;">wait-for-the-wind</a></dd>

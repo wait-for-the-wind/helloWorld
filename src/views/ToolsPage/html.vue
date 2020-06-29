@@ -32,7 +32,7 @@ export default {
           img_url: require('../../assets/images/show1.jpg')
         },
         {
-          img_title: '兴趣支撑梦想，兴趣是支撑我自己前行的动力',
+          img_title: '负重前行，无所畏惧',
           img_url: require('../../assets/images/show1.jpg')
         }
       ]
