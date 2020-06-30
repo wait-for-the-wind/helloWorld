@@ -20,26 +20,15 @@
       <el-col :span="17">
         <el-card class="box-card">
           <el-tabs v-model="activeName" @tab-click="handleClick">
-            <el-tab-pane label="博客日记" name="first">
-              <el-row class="tac">
-                <el-col :span="8">
-                  <!-- 这是图片组件 -->
-                  <my-img :data="img_data"></my-img>
-                </el-col>
-                <el-col :span="16">
-                  <el-collapse v-model="activeName1" accordion class="news_list" @change="changeCollapse($event)">
-                    <el-collapse-item :title="item.new_title" :name="index" v-for="(item, index) in news_list" :key="item.id" class="news_part">
-                      <p>{{item.new_info}}</p>
-                    </el-collapse-item>
-                  </el-collapse>
-                </el-col>
-              </el-row>
+            <el-tab-pane :label="item.label" :name="item.name" v-for="item in card_list" :key="item.name">
+              <!-- 卡片内容组件，切换不同的卡片时，传递不同的内容过去 -->
+              <my-card :card_data="card_data"></my-card>
             </el-tab-pane>
-            <el-tab-pane label="码农生涯" name="second">
+            <!-- <el-tab-pane label="码农生涯" name="second">
               
             </el-tab-pane>
             <el-tab-pane label="旅游计划" name="third">我是个爱出去的人儿啊</el-tab-pane>
-            <el-tab-pane label="JS&Vue" name="fourth">技术补充站</el-tab-pane>
+            <el-tab-pane label="JS&Vue" name="fourth">技术补充站</el-tab-pane> -->
           </el-tabs>
         </el-card>
       </el-col>
@@ -75,9 +64,9 @@
 <script>
 import rank from '@components/blog/rank.vue'
 import swper from '@components/swper.vue'
+import card from '@components/home_card.vue'
 import { mapMutations, mapState } from 'vuex'
 import axios from 'axios'
-import img from '@components/blog/img_list.vue'
 export default {
   data () {
     return {
@@ -87,7 +76,6 @@ export default {
       img_width: 0,
       img_height: 0,
       activeName: 'first',
-      activeName1: '1',
       // 点击排行
       click_rank: [
         {
@@ -148,45 +136,198 @@ export default {
           img_url: require('../assets/images/swper/5.jpg')
         }
       ],
-      // 新闻列表
-      news_list: [
+      card_list: [
         {
-          new_title: ' 父组件如何修改子组件得dom',
-          new_info: '当我点击手风琴时候，想让左侧图片得高度发生变化，但因为这是个子组件，我没办法直接获取子组件dom并加以修改，暂时先放一放',
-          new_id: 1
+          label: '博客日记',
+          name: 'first'
         },
         {
-          new_title: ' 博客详情页怎么处理',
-          new_info: '有段落，有图片，怎么随心插入图片，文字分段',
-          new_id: 2
+          label: '码农生涯',
+          name: 'second'
         },
         {
-          new_title: ' 后台如何搭建',
-          new_info: '选用 node.js 搭建后台',
-          new_id: 3
+          label: '旅游计划',
+          name: 'third'
         },
         {
-          new_title: ' 我仅仅是一个“草根站长”',
-          new_info: '虽然也经历了被人质疑、嘲笑和不屑。但是我始终坚信自己的选择是正确的。并把他们的这些不屑变成更强的动力，去追逐成功。网上很多说个人博客末落了，说的是第',
-          new_id: 4
-        },
-        {
-          new_title: ' 我仅仅是一个“草根站长”',
-          new_info: '虽然也经历了被人质疑、嘲笑和不屑。但是我始终坚信自己的选择是正确的。并把他们的这些不屑变成更强的动力，去追逐成功。网上很多说个人博客末落了，说的是第',
-          new_id: 5
+          label: 'JS&Vue',
+          name: 'fourth'
         }
       ],
-      // 图片
-      img_data: [
+      // 获取到的所有展示的数据
+      card_info_list: [
+        // 1
         {
-          img_title: '兴趣支撑梦想，兴趣是支撑我自己前行的动力',
-          img_url: require('../assets/images/show1.jpg')
+          // 新闻列表
+          news_list: [
+            {
+              new_title: ' 父组件如何修改子组件得dom',
+              new_info: '当我点击手风琴时候，想让左侧图片得高度发生变化，但因为这是个子组件，我没办法直接获取子组件dom并加以修改，暂时先放一放',
+              new_id: 1
+            },
+            {
+              new_title: ' 博客详情页怎么处理',
+              new_info: '有段落，有图片，怎么随心插入图片，文字分段',
+              new_id: 2
+            },
+            {
+              new_title: ' 后台如何搭建',
+              new_info: '选用 node.js 搭建后台',
+              new_id: 3
+            },
+            {
+              new_title: ' 我仅仅是一个“草根站长”',
+              new_info: '虽然也经历了被人质疑、嘲笑和不屑。但是我始终坚信自己的选择是正确的。并把他们的这些不屑变成更强的动力，去追逐成功。网上很多说个人博客末落了，说的是第',
+              new_id: 4
+            },
+            {
+              new_title: ' 我仅仅是一个“草根站长”',
+              new_info: '虽然也经历了被人质疑、嘲笑和不屑。但是我始终坚信自己的选择是正确的。并把他们的这些不屑变成更强的动力，去追逐成功。网上很多说个人博客末落了，说的是第',
+              new_id: 5
+            }
+          ],
+          // 图片
+          img_data: [
+            {
+              img_title: '兴趣支撑梦想，兴趣是支撑我自己前行的动力',
+              img_url: require('@images/swiperB_2.png')
+            },
+            {
+              img_title: '乘风破浪会有时，直挂云帆济沧海',
+              img_url: require('../assets/images/show1.jpg')
+            }
+          ]
         },
+        // 2
         {
-          img_title: '乘风破浪会有时，直挂云帆济沧海',
-          img_url: require('../assets/images/show1.jpg')
+          // 新闻列表
+          news_list: [
+            {
+              new_title: ' 缘起于2020-07-27的那本JAVA从入门到入土',
+              new_info: '当我买了那本书后，我还不知道我得生活已经发生了惊天巨变',
+              new_id: 1
+            },
+            {
+              new_title: ' CSS-font',
+              new_info: '有段落，有图片，怎么随心插入图片，文字分段',
+              new_id: 2
+            },
+            {
+              new_title: ' CSS-flex',
+              new_info: '选用 node.js 搭建后台',
+              new_id: 3
+            },
+            {
+              new_title: ' 我仅仅是一个“草根站长”',
+              new_info: '虽然也经历了被人质疑、嘲笑和不屑。但是我始终坚信自己的选择是正确的。并把他们的这些不屑变成更强的动力，去追逐成功。网上很多说个人博客末落了，说的是第',
+              new_id: 4
+            },
+            {
+              new_title: ' 我仅仅是一个“草根站长”',
+              new_info: '虽然也经历了被人质疑、嘲笑和不屑。但是我始终坚信自己的选择是正确的。并把他们的这些不屑变成更强的动力，去追逐成功。网上很多说个人博客末落了，说的是第',
+              new_id: 5
+            }
+          ],
+          // 图片
+          img_data: [
+            {
+              img_title: '兴趣支撑梦想，兴趣是支撑我自己前行的动力',
+              img_url: require('@images/swiperB_3.png')
+            },
+            {
+              img_title: '乘风破浪会有时，直挂云帆济沧海',
+              img_url: require('../assets/images/show1.jpg')
+            }
+          ]
+        },
+        // 3
+        {
+          // 新闻列表
+          news_list: [
+            {
+              new_title: ' 父组件如何修改子组件得dom',
+              new_info: '当我点击手风琴时候，想让左侧图片得高度发生变化，但因为这是个子组件，我没办法直接获取子组件dom并加以修改，暂时先放一放',
+              new_id: 1
+            },
+            {
+              new_title: ' 博客详情页怎么处理',
+              new_info: '有段落，有图片，怎么随心插入图片，文字分段',
+              new_id: 2
+            },
+            {
+              new_title: ' 后台如何搭建',
+              new_info: '选用 node.js 搭建后台',
+              new_id: 3
+            },
+            {
+              new_title: ' 我仅仅是一个“草根站长”',
+              new_info: '虽然也经历了被人质疑、嘲笑和不屑。但是我始终坚信自己的选择是正确的。并把他们的这些不屑变成更强的动力，去追逐成功。网上很多说个人博客末落了，说的是第',
+              new_id: 4
+            },
+            {
+              new_title: ' 我仅仅是一个“草根站长”',
+              new_info: '虽然也经历了被人质疑、嘲笑和不屑。但是我始终坚信自己的选择是正确的。并把他们的这些不屑变成更强的动力，去追逐成功。网上很多说个人博客末落了，说的是第',
+              new_id: 5
+            }
+          ],
+          // 图片
+          img_data: [
+            {
+              img_title: '兴趣支撑梦想，兴趣是支撑我自己前行的动力',
+              img_url: require('@images/swiperB_2.png')
+            },
+            {
+              img_title: '乘风破浪会有时，直挂云帆济沧海',
+              img_url: require('../assets/images/show1.jpg')
+            }
+          ]
+        },
+        // 4
+        {
+          // 新闻列表
+          news_list: [
+            {
+              new_title: ' 父组件如何修改子组件得dom',
+              new_info: '当我点击手风琴时候，想让左侧图片得高度发生变化，但因为这是个子组件，我没办法直接获取子组件dom并加以修改，暂时先放一放',
+              new_id: 1
+            },
+            {
+              new_title: ' 博客详情页怎么处理',
+              new_info: '有段落，有图片，怎么随心插入图片，文字分段',
+              new_id: 2
+            },
+            {
+              new_title: ' 后台如何搭建',
+              new_info: '选用 node.js 搭建后台',
+              new_id: 3
+            },
+            {
+              new_title: ' 我仅仅是一个“草根站长”',
+              new_info: '虽然也经历了被人质疑、嘲笑和不屑。但是我始终坚信自己的选择是正确的。并把他们的这些不屑变成更强的动力，去追逐成功。网上很多说个人博客末落了，说的是第',
+              new_id: 4
+            },
+            {
+              new_title: ' 我仅仅是一个“草根站长”',
+              new_info: '虽然也经历了被人质疑、嘲笑和不屑。但是我始终坚信自己的选择是正确的。并把他们的这些不屑变成更强的动力，去追逐成功。网上很多说个人博客末落了，说的是第',
+              new_id: 5
+            }
+          ],
+          // 图片
+          img_data: [
+            {
+              img_title: '兴趣支撑梦想，兴趣是支撑我自己前行的动力',
+              img_url: require('@images/swiperB_2.png')
+            },
+            {
+              img_title: '乘风破浪会有时，直挂云帆济沧海',
+              img_url: require('../assets/images/show1.jpg')
+            }
+          ]
         }
-      ]
+      ],
+      // 传递给card的数据
+      card_data: {
+      }
     }
   },
   // 状态管理器中的数据映射在计算属性中
@@ -195,33 +336,33 @@ export default {
   },
   mounted () {
     this.checkUndefind()
-    // this.changeCollapse()
+    this.card_data = this.card_info_list[0]
   },
   components: {
     'my-rank': rank,
     'my-swper': swper,
-    'my-img': img
+    'my-card': card
   },
   methods: {
     ...mapMutations(['add', 'sub', 'subN']),
-    // 新闻板块
-    changeCollapse(e) {
-      console.log('this.$refs', this.$refs)
-      var $lis = this.$refs.img_list.getElementsByTagName('li')
-      if (e !== '') {
-        $lis.forEach(item => {
-          item.style.height = '150px'
-          item.style.transition = 'all 0.3s'
-        })
-        // this.$refs.img_list
-      } else {
-        $lis.forEach(item => {
-          item.style.height = '115px'
-        })
-      }
-    },
     handleClick (tab, event) {
-      console.log(tab, event)
+      switch (tab.label) {
+        case '博客日记':
+          this.card_data = this.card_info_list[0]
+          break;
+        case '码农生涯':
+          this.card_data = this.card_info_list[1]
+          break;
+        case '旅游计划':
+          this.card_data = this.card_info_list[2]
+          break;
+        case 'JS&Vue':
+          this.card_data = this.card_info_list[3]
+          break;
+        default:
+          alert('页面出错')
+          break;
+      }
     },
     checkUndefind () {
       var undefind = true;
@@ -304,45 +445,6 @@ p {
       text-overflow: ellipsis;
       white-space: nowrap;
       vertical-align: -29%;
-    }
-  }
-}
-.news_list {
-  text-align: left;
-  width: 500px;
-  margin-left: 20px;
-  .news_part {
-    min-height: 32px;
-    a:before {
-      counter-increment:sectioncounter;
-      content: counter(sectioncounter) " ";
-      line-height: 20px;
-      width: 20px;
-      background: black;
-      color: #fff;
-      text-align: center;
-      display: inline-block;
-      font-weight: 500;
-    }
-    a {
-      color: black;
-      font-weight: 700;
-      line-height: 24px;
-      font-size: 14px;
-    }
-    p {
-      margin: 0;
-      text-align: left;
-      text-indent: 1em;
-      // 文字展示两行，多余省略号
-      overflow: hidden;
-      text-overflow: ellipsis;
-      display: -webkit-box;
-      -webkit-box-orient: vertical;
-      -webkit-line-clamp: 2;
-      height: 48px;
-      font-size: 14px;
-      line-height: 22px;
     }
   }
 }
