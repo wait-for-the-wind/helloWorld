@@ -2,7 +2,7 @@
   <div>
     <ul>
       <li v-for="(item, index) in rank" :key="index">
-        <i>{{index + 1}}</i>
+        <i :class="index > 2 ? 'gray' : 'red'">{{index + 1}}</i>
         <a :href="item.title_href">{{item.title}}</a>
       </li>
     </ul>
@@ -35,9 +35,14 @@ body {
         text-align: center;
         line-height: 16px;
         color: white;
-        background: #ff6600;
         display: inline-block;
         margin-right: 10px;
+      }
+      .red {
+        background: #ff6600;
+      }
+      .gray {
+        background: #B1B1B1;
       }
       a {
         max-width: 230px;

@@ -20,11 +20,11 @@ module.exports = {
   // 2\跨域
   devServer: {
     proxy: 'http://api.2217.com'
-  },
-  configureWebpack: () => {
-    config.module.rules.push({
-      // test: /.md$/,
-      // use: 'text-loader'
-    })
   }
+  // configureWebpack: () => {
+  //   config.module.rules.push({
+  //     // test: /.md$/,
+  //     // use: 'text-loader'
+  //   })
+  // }
 }

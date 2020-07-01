@@ -16,6 +16,7 @@
             <span>点击排行</span>
             <el-button style="float: right; padding: 3px 0" type="text">更多</el-button>
           </div>
+          <!-- 点击排行 -->
           <my-rank :rank="click_rank"></my-rank>
         </el-card>
 
@@ -24,6 +25,7 @@
             <span>站长推荐</span>
             <el-button style="float: right; padding: 3px 0" type="text">更多</el-button>
           </div>
+          <!-- 站长推荐 -->
           <my-rank :rank="recommend_rank"></my-rank>
         </el-card>
         <el-card class="box-card" shadow="always">
@@ -31,6 +33,7 @@
             <span>来首安静得歌曲吧</span>
             <el-button style="float: right; padding: 3px 0" type="text">更多</el-button>
           </div>
+          <!-- 来首安静得歌曲吧 -->
           <my-rank :rank="music_rank"></my-rank>
         </el-card>
       </el-col>
@@ -56,7 +59,7 @@ export default {
           time: '2020-06-11',
           see: 2232,
           comment: 66,
-          autho_info: 'http://10.0.204.46:8081/growUp',
+          autho_info: '/',
           see_more: 'http://10.0.204.46:8081/gr',
           id: 1
         },
@@ -71,7 +74,7 @@ export default {
           time: '2020-06-11',
           see: 99,
           comment: 103,
-          autho_info: 'http://10.0.204.46:8081/growUp',
+          autho_info: '/',
           see_more: 'http://10.0.204.46:8081/gr',
           id: 2
         },
@@ -86,7 +89,7 @@ export default {
           time: '2020-06-11',
           see: 11,
           comment: 7567,
-          autho_info: 'http://10.0.204.46:8081/growUp',
+          autho_info: '/',
           see_more: 'http://10.0.204.46:8081/gr',
           id: 3
         }
@@ -138,7 +141,6 @@ export default {
 
 =======
 .box-card {
-  margin-top: 10px;
   .blogList {
     li {
       padding-bottom: 20px;

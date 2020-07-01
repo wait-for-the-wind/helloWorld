@@ -1,41 +1,5 @@
 <template>
   <div class="home">
-<<<<<<< HEAD
-    <p>当前的count值为：{{$store.state.testVuex.count}}</p>
-    <button @click="func1">+ 1</button>
-    <button @click="addN(3)">+ N</button>
-    <button @click="sub">- 1</button>
-    <button @click="subN(5)">- N</button>
-    <h5>{{count}}</h5>
-    <hr>
-    <table>
-      <thead>
-        <tr>
-          <th>事件</th>
-          <th>时间</th>
-          <th>编辑</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr v-for="item in list" :key="item.id">
-          <td>{{item.title}}</td>
-          <td>{{item.time}}</td>
-          <td>
-            <a href>移除</a>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-    <hr />
-    <img
-      src="https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=2534506313,1688529724&fm=26&gp=0.jpg"
-      alt
-    />
-    <span>这张图片得尺寸是：{{img_width}} * {{img_height}}</span>
-    <button @click="addCooike">添加cooike</button>
-    <button @click="remove">删除cooike</button>
-    <input type="number" name id />
-=======
     <el-row style="height: 309px;">
       <el-col :span="17">
         <my-swper :imglist="img_list"></my-swper>
@@ -56,36 +20,15 @@
       <el-col :span="17">
         <el-card class="box-card">
           <el-tabs v-model="activeName" @tab-click="handleClick">
-            <el-tab-pane label="博客日记" name="first">
-              <el-row class="tac">
-                <el-col :span="8">
-                  <ul class="lbox">
-                    <li>
-                      <a href>
-                        <img src="@images/show1.jpg" alt />
-                      </a>
-                      <span>兴趣支撑梦想，兴趣是支撑我自己前行的动力</span>
-                    </li>
-                    <li>
-                      <a href>
-                        <img src="@images/show1.jpg" alt />
-                      </a>
-                      <span>忙碌是自由活着的一种底气</span>
-                    </li>
-                  </ul>
-                </el-col>
-                <el-col :span="16">
-                  <el-collapse v-model="activeName1" accordion class="news_list" @change="changeCollapse($event)">
-                    <el-collapse-item :title="item.new_title" :name="index" v-for="(item, index) in news_list" :key="item.id" class="news_part">
-                      <p>{{item.new_info}}</p>
-                    </el-collapse-item>
-                  </el-collapse>
-                </el-col>
-              </el-row>
+            <el-tab-pane :label="item.label" :name="item.name" v-for="item in card_list" :key="item.name">
+              <!-- 卡片内容组件，切换不同的卡片时，传递不同的内容过去 -->
+              <my-card :card_data="card_data"></my-card>
             </el-tab-pane>
-            <el-tab-pane label="码农生涯" name="second">这是一辈子的事儿了，用心去感受</el-tab-pane>
+            <!-- <el-tab-pane label="码农生涯" name="second">
+              
+            </el-tab-pane>
             <el-tab-pane label="旅游计划" name="third">我是个爱出去的人儿啊</el-tab-pane>
-            <el-tab-pane label="JS&Vue" name="fourth">技术补充站</el-tab-pane>
+            <el-tab-pane label="JS&Vue" name="fourth">技术补充站</el-tab-pane> -->
           </el-tabs>
         </el-card>
       </el-col>
@@ -114,7 +57,6 @@
         </el-card>
       </el-col>
     </el-row>
->>>>>>> dev
     <router-view></router-view>
   </div>
 </template>
@@ -122,6 +64,7 @@
 <script>
 import rank from '@components/blog/rank.vue'
 import swper from '@components/swper.vue'
+import card from '@components/home_card.vue'
 import { mapMutations, mapState } from 'vuex'
 import axios from 'axios'
 export default {
@@ -131,12 +74,8 @@ export default {
       obj: { name: 'sjy', age: 18 },
       list: [],
       img_width: 0,
-<<<<<<< HEAD
-      img_height: 0
-=======
       img_height: 0,
       activeName: 'first',
-      activeName1: '1',
       // 点击排行
       click_rank: [
         {
@@ -151,11 +90,19 @@ export default {
       // 推荐排行
       recommend_rank: [
         {
-          title: 'XXXXXX',
+          title: '从入门到吃土',
           title_href: 'javascript:;'
         },
         {
-          title: 'YYYYYYY',
+          title: '从吃土到绝地重生',
+          title_href: 'javascript:;'
+        },
+        {
+          title: '从吃土到绝地重生',
+          title_href: 'javascript:;'
+        },
+        {
+          title: '从吃土到绝地重生',
           title_href: 'javascript:;'
         }
       ],
@@ -163,6 +110,10 @@ export default {
       music_rank: [
         {
           title: '等你下课',
+          title_href: 'javascript:;'
+        },
+        {
+          title: '世界美好与你环环相扣',
           title_href: 'javascript:;'
         },
         {
@@ -197,35 +148,198 @@ export default {
           img_url: require('../assets/images/swper/5.jpg')
         }
       ],
-      // 新闻列表
-      news_list: [
+      card_list: [
         {
-          new_title: ' 我仅仅是一个“草根站长”',
-          new_info: '虽然也经历了被人质疑、嘲笑和不屑。但是我始终坚信自己的选择是正确的。并把他们的这些不屑变成更强的动力，去追逐成功。网上很多说个人博客末落了，说的是第',
-          new_id: 1
+          label: '博客日记',
+          name: 'first'
         },
         {
-          new_title: ' 我仅仅是一个“草根站长”',
-          new_info: '虽然也经历了被人质疑、嘲笑和不屑。但是我始终坚信自己的选择是正确的。并把他们的这些不屑变成更强的动力，去追逐成功。网上很多说个人博客末落了，说的是第',
-          new_id: 2
+          label: '码农生涯',
+          name: 'second'
         },
         {
-          new_title: ' 我仅仅是一个“草根站长”',
-          new_info: '虽然也经历了被人质疑、嘲笑和不屑。但是我始终坚信自己的选择是正确的。并把他们的这些不屑变成更强的动力，去追逐成功。网上很多说个人博客末落了，说的是第',
-          new_id: 3
+          label: '旅游计划',
+          name: 'third'
         },
         {
-          new_title: ' 我仅仅是一个“草根站长”',
-          new_info: '虽然也经历了被人质疑、嘲笑和不屑。但是我始终坚信自己的选择是正确的。并把他们的这些不屑变成更强的动力，去追逐成功。网上很多说个人博客末落了，说的是第',
-          new_id: 4
-        },
-        {
-          new_title: ' 我仅仅是一个“草根站长”',
-          new_info: '虽然也经历了被人质疑、嘲笑和不屑。但是我始终坚信自己的选择是正确的。并把他们的这些不屑变成更强的动力，去追逐成功。网上很多说个人博客末落了，说的是第',
-          new_id: 5
+          label: 'JS&Vue',
+          name: 'fourth'
         }
-      ]
->>>>>>> dev
+      ],
+      // 获取到的所有展示的数据
+      card_info_list: [
+        // 1
+        {
+          // 新闻列表
+          news_list: [
+            {
+              new_title: ' 父组件如何修改子组件得dom',
+              new_info: '当我点击手风琴时候，想让左侧图片得高度发生变化，但因为这是个子组件，我没办法直接获取子组件dom并加以修改，暂时先放一放',
+              new_id: 1
+            },
+            {
+              new_title: ' 博客详情页怎么处理',
+              new_info: '有段落，有图片，怎么随心插入图片，文字分段',
+              new_id: 2
+            },
+            {
+              new_title: ' 后台如何搭建',
+              new_info: '选用 node.js 搭建后台',
+              new_id: 3
+            },
+            {
+              new_title: ' 深化交互效果',
+              new_info: '简单的css可不能打动面试官，需要把vuex加入进来 axios加入进来 mock.js加入进来',
+              new_id: 4
+            },
+            {
+              new_title: ' 每个后台界面应该有编辑、删除、新增操作，增强交互性',
+              new_info: '新增是否可以采用session',
+              new_id: 5
+            }
+          ],
+          // 图片
+          img_data: [
+            {
+              img_title: '兴趣支撑梦想，兴趣是支撑我自己前行的动力',
+              img_url: require('@images/swiperB_2.png')
+            },
+            {
+              img_title: '乘风破浪会有时，直挂云帆济沧海',
+              img_url: require('../assets/images/show1.jpg')
+            }
+          ]
+        },
+        // 2
+        {
+          // 新闻列表
+          news_list: [
+            {
+              new_title: ' 缘起于2020-07-27的那本JAVA从入门到入土',
+              new_info: '当我买了那本书后，我还不知道我得生活已经发生了惊天巨变',
+              new_id: 1
+            },
+            {
+              new_title: ' 应该还有评论、博客页面展示详情页面',
+              new_info: '有段落，有图片，怎么随心插入图片，文字分段',
+              new_id: 2
+            },
+            {
+              new_title: ' CSS-flex',
+              new_info: '选用 node.js 搭建后台',
+              new_id: 3
+            },
+            {
+              new_title: ' 我仅仅是一个“草根站长”',
+              new_info: '虽然也经历了被人质疑、嘲笑和不屑。但是我始终坚信自己的选择是正确的。并把他们的这些不屑变成更强的动力，去追逐成功。网上很多说个人博客末落了，说的是第',
+              new_id: 4
+            },
+            {
+              new_title: ' 我仅仅是一个“草根站长”',
+              new_info: '虽然也经历了被人质疑、嘲笑和不屑。但是我始终坚信自己的选择是正确的。并把他们的这些不屑变成更强的动力，去追逐成功。网上很多说个人博客末落了，说的是第',
+              new_id: 5
+            }
+          ],
+          // 图片
+          img_data: [
+            {
+              img_title: '兴趣支撑梦想，兴趣是支撑我自己前行的动力',
+              img_url: require('@images/swiperB_3.png')
+            },
+            {
+              img_title: '乘风破浪会有时，直挂云帆济沧海',
+              img_url: require('../assets/images/show1.jpg')
+            }
+          ]
+        },
+        // 3
+        {
+          // 新闻列表
+          news_list: [
+            {
+              new_title: ' 父组件如何修改子组件得dom',
+              new_info: '当我点击手风琴时候，想让左侧图片得高度发生变化，但因为这是个子组件，我没办法直接获取子组件dom并加以修改，暂时先放一放',
+              new_id: 1
+            },
+            {
+              new_title: ' 博客详情页怎么处理',
+              new_info: '有段落，有图片，怎么随心插入图片，文字分段',
+              new_id: 2
+            },
+            {
+              new_title: ' 后台如何搭建',
+              new_info: '选用 node.js 搭建后台',
+              new_id: 3
+            },
+            {
+              new_title: ' 我仅仅是一个“草根站长”',
+              new_info: '虽然也经历了被人质疑、嘲笑和不屑。但是我始终坚信自己的选择是正确的。并把他们的这些不屑变成更强的动力，去追逐成功。网上很多说个人博客末落了，说的是第',
+              new_id: 4
+            },
+            {
+              new_title: ' 我仅仅是一个“草根站长”',
+              new_info: '虽然也经历了被人质疑、嘲笑和不屑。但是我始终坚信自己的选择是正确的。并把他们的这些不屑变成更强的动力，去追逐成功。网上很多说个人博客末落了，说的是第',
+              new_id: 5
+            }
+          ],
+          // 图片
+          img_data: [
+            {
+              img_title: '兴趣支撑梦想，兴趣是支撑我自己前行的动力',
+              img_url: require('@images/swiperB_2.png')
+            },
+            {
+              img_title: '乘风破浪会有时，直挂云帆济沧海',
+              img_url: require('../assets/images/show1.jpg')
+            }
+          ]
+        },
+        // 4
+        {
+          // 新闻列表
+          news_list: [
+            {
+              new_title: ' 父组件如何修改子组件得dom',
+              new_info: '当我点击手风琴时候，想让左侧图片得高度发生变化，但因为这是个子组件，我没办法直接获取子组件dom并加以修改，暂时先放一放',
+              new_id: 1
+            },
+            {
+              new_title: ' 博客详情页怎么处理',
+              new_info: '有段落，有图片，怎么随心插入图片，文字分段',
+              new_id: 2
+            },
+            {
+              new_title: ' 后台如何搭建',
+              new_info: '选用 node.js 搭建后台',
+              new_id: 3
+            },
+            {
+              new_title: ' 我仅仅是一个“草根站长”',
+              new_info: '虽然也经历了被人质疑、嘲笑和不屑。但是我始终坚信自己的选择是正确的。并把他们的这些不屑变成更强的动力，去追逐成功。网上很多说个人博客末落了，说的是第',
+              new_id: 4
+            },
+            {
+              new_title: ' 我仅仅是一个“草根站长”',
+              new_info: '虽然也经历了被人质疑、嘲笑和不屑。但是我始终坚信自己的选择是正确的。并把他们的这些不屑变成更强的动力，去追逐成功。网上很多说个人博客末落了，说的是第',
+              new_id: 5
+            }
+          ],
+          // 图片
+          img_data: [
+            {
+              img_title: '兴趣支撑梦想，兴趣是支撑我自己前行的动力',
+              img_url: require('@images/swiperB_2.png')
+            },
+            {
+              img_title: '乘风破浪会有时，直挂云帆济沧海',
+              img_url: require('../assets/images/show1.jpg')
+            }
+          ]
+        }
+      ],
+      // 传递给card的数据
+      card_data: {
+      }
     }
   },
   // 状态管理器中的数据映射在计算属性中
@@ -243,22 +357,33 @@ export default {
       self.img_height = height
     })
     this.checkUndefind()
+    this.card_data = this.card_info_list[0]
   },
   components: {
     'my-rank': rank,
-    'my-swper': swper
+    'my-swper': swper,
+    'my-card': card
   },
   methods: {
     ...mapMutations(['add', 'sub', 'subN']),
-    // 新闻板块
-    changeCollapse(e) {
-      console.log('e', e)
-      if (e !== '') {
-        
-      }
-    },
     handleClick (tab, event) {
-      console.log(tab, event)
+      switch (tab.label) {
+        case '博客日记':
+          this.card_data = this.card_info_list[0]
+          break;
+        case '码农生涯':
+          this.card_data = this.card_info_list[1]
+          break;
+        case '旅游计划':
+          this.card_data = this.card_info_list[2]
+          break;
+        case 'JS&Vue':
+          this.card_data = this.card_info_list[3]
+          break;
+        default:
+          alert('页面出错')
+          break;
+      }
     },
     checkUndefind () {
       var undefind = true;
@@ -283,51 +408,6 @@ export default {
 p {
   text-align: center;
   margin: 50px;
-}
-.lbox {
-  width: 100%;
-  li {
-    // 正常情况 115 合适 展开时候 150合适
-    height: 150px;
-    width: 275px;
-    overflow: hidden;
-    position: relative;
-    margin-bottom: 15px;
-    a {
-      display: block;
-      // position: absolute;
-      // transform: translate(-50%);
-      img {
-        width: 275px;
-        transition: all 0.5s;
-        opacity: 0.7;
-        filter: blur(2px);
-        // filter: grayscale(0.5);
-        display: block;
-      }
-      img:hover {
-        transform: scale(1.2);
-        filter: blur(0px);
-        opacity: 1;
-      }
-    }
-    span {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      width: 195px;
-      height: 44px;
-      transform: translate(-50%, -50%);
-      display: block;
-      color: #ff0000;
-      font-weight: 600;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      -webkit-box-orient: vertical;
-      display: -webkit-box;
-      -webkit-line-clamp: 2;
-    }
-  }
 }
 .box-card {
   margin-bottom: 10px;
@@ -386,45 +466,6 @@ p {
       text-overflow: ellipsis;
       white-space: nowrap;
       vertical-align: -29%;
-    }
-  }
-}
-.news_list {
-  text-align: left;
-  width: 500px;
-  margin-left: 20px;
-  .news_part {
-    min-height: 32px;
-    a:before {
-      counter-increment:sectioncounter;
-      content: counter(sectioncounter) " ";
-      line-height: 20px;
-      width: 20px;
-      background: black;
-      color: #fff;
-      text-align: center;
-      display: inline-block;
-      font-weight: 500;
-    }
-    a {
-      color: black;
-      font-weight: 700;
-      line-height: 24px;
-      font-size: 14px;
-    }
-    p {
-      margin: 0;
-      text-align: left;
-      text-indent: 1em;
-      // 文字展示两行，多余省略号
-      overflow: hidden;
-      text-overflow: ellipsis;
-      display: -webkit-box;
-      -webkit-box-orient: vertical;
-      -webkit-line-clamp: 2;
-      height: 48px;
-      font-size: 14px;
-      line-height: 22px;
     }
   }
 }

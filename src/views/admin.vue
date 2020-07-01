@@ -47,7 +47,8 @@
 export default {
   data () {
     return {
-      flag: false
+      flag: false,
+      default_active: ''
     }
   }
 }

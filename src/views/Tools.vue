@@ -18,10 +18,10 @@
               <span slot="title">前端</span>
             </template>
             <el-menu-item-group>
-              <el-menu-item index="/tools/fronted">HTML</el-menu-item>
-              <el-menu-item index="1-3">CSS</el-menu-item>
-              <el-menu-item index="1-3">JavaScript</el-menu-item>
-              <el-menu-item index="1-3">Vue</el-menu-item>
+              <el-menu-item index="/tools/html">HTML</el-menu-item>
+              <el-menu-item index="/tools/css">CSS</el-menu-item>
+              <el-menu-item index="/tools/js">JavaScript</el-menu-item>
+              <el-menu-item index="/tools/vue">Vue</el-menu-item>
             </el-menu-item-group>
           </el-submenu>
           <!-- 后端 -->
