@@ -90,11 +90,19 @@ export default {
       // 推荐排行
       recommend_rank: [
         {
-          title: 'XXXXXX',
+          title: '从入门到吃土',
           title_href: 'javascript:;'
         },
         {
-          title: 'YYYYYYY',
+          title: '从吃土到绝地重生',
+          title_href: 'javascript:;'
+        },
+        {
+          title: '从吃土到绝地重生',
+          title_href: 'javascript:;'
+        },
+        {
+          title: '从吃土到绝地重生',
           title_href: 'javascript:;'
         }
       ],
@@ -102,6 +110,10 @@ export default {
       music_rank: [
         {
           title: '等你下课',
+          title_href: 'javascript:;'
+        },
+        {
+          title: '世界美好与你环环相扣',
           title_href: 'javascript:;'
         },
         {
@@ -176,13 +188,13 @@ export default {
               new_id: 3
             },
             {
-              new_title: ' 我仅仅是一个“草根站长”',
-              new_info: '虽然也经历了被人质疑、嘲笑和不屑。但是我始终坚信自己的选择是正确的。并把他们的这些不屑变成更强的动力，去追逐成功。网上很多说个人博客末落了，说的是第',
+              new_title: ' 深化交互效果',
+              new_info: '简单的css可不能打动面试官，需要把vuex加入进来 axios加入进来 mock.js加入进来',
               new_id: 4
             },
             {
-              new_title: ' 我仅仅是一个“草根站长”',
-              new_info: '虽然也经历了被人质疑、嘲笑和不屑。但是我始终坚信自己的选择是正确的。并把他们的这些不屑变成更强的动力，去追逐成功。网上很多说个人博客末落了，说的是第',
+              new_title: ' 每个后台界面应该有编辑、删除、新增操作，增强交互性',
+              new_info: '新增是否可以采用session',
               new_id: 5
             }
           ],
@@ -208,7 +220,7 @@ export default {
               new_id: 1
             },
             {
-              new_title: ' CSS-font',
+              new_title: ' 应该还有评论、博客页面展示详情页面',
               new_info: '有段落，有图片，怎么随心插入图片，文字分段',
               new_id: 2
             },
