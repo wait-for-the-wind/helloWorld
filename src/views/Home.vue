@@ -24,15 +24,11 @@
               <!-- 卡片内容组件，切换不同的卡片时，传递不同的内容过去 -->
               <my-card :card_data="card_data"></my-card>
             </el-tab-pane>
-            <!-- <el-tab-pane label="码农生涯" name="second">
-              
-            </el-tab-pane>
-            <el-tab-pane label="旅游计划" name="third">我是个爱出去的人儿啊</el-tab-pane>
-            <el-tab-pane label="JS&Vue" name="fourth">技术补充站</el-tab-pane> -->
           </el-tabs>
         </el-card>
       </el-col>
       <el-col :span="6" class="rank">
+        <!-- 这三个card也可以简化为一个 -->
         <el-card class="box-card" shadow="always">
           <div slot="header" class="clearfix">
             <span>点击排行</span>
@@ -70,11 +66,6 @@ import axios from 'axios'
 export default {
   data () {
     return {
-      name: 'sjy',
-      obj: { name: 'sjy', age: 18 },
-      list: [],
-      img_width: 0,
-      img_height: 0,
       activeName: 'first',
       // 点击排行
       click_rank: [
@@ -174,7 +165,7 @@ export default {
           news_list: [
             {
               new_title: ' 父组件如何修改子组件得dom',
-              new_info: '当我点击手风琴时候，想让左侧图片得高度发生变化，但因为这是个子组件，我没办法直接获取子组件dom并加以修改，暂时先放一放',
+              new_info: '当我点击手风琴时候，想让左侧图片得高度发生变化，但因为这是个子组件，我没办法直接获取子组件dom并加以修改，答：可以把这两个组件同时做成一个组件，这样就不存在子组件的问题了',
               new_id: 1
             },
             {
@@ -358,23 +349,19 @@ export default {
   methods: {
     ...mapMutations(['add', 'sub', 'subN']),
     handleClick (tab, event) {
-      switch (tab.label) {
-        case '博客日记':
-          this.card_data = this.card_info_list[0]
-          break;
-        case '码农生涯':
-          this.card_data = this.card_info_list[1]
-          break;
-        case '旅游计划':
-          this.card_data = this.card_info_list[2]
-          break;
-        case 'JS&Vue':
-          this.card_data = this.card_info_list[3]
-          break;
-        default:
-          alert('页面出错')
-          break;
-      }
+      var blogArr = ['博客日记', '码农生涯', '旅游计划', 'JS&Vue']
+      // bad
+      // for (var i = 0; i < blog_arr.length; i++) {
+      //   switch (tab.label) {
+      //     case blog_arr[i]:
+      //       this.card_data = this.card_info_list[i]
+      //       break
+      //   }
+      // }
+      // good
+      blogArr.some((item, index) => {
+        if (item === tab.label) this.card_data = this.card_info_list[index]
+      })
     },
     checkUndefind () {
       var undefind = true;
