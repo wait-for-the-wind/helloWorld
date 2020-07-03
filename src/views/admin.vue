@@ -30,7 +30,7 @@
             <i class="el-icon-edit"></i>
             <span slot="title">博客管理</span>
           </el-menu-item>
-          <el-menu-item index="/admin/toolAdmin">
+          <el-menu-item index="/admin/growUp">
             <i class="el-icon-loading"></i>
             <span slot="title">经历管理</span>
           </el-menu-item>

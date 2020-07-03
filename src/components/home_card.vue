@@ -36,7 +36,6 @@ export default {
   methods: {
     // 新闻板块
     changeCollapse(e) {
-      console.log('this.$refs', this.$refs)
       var $lis = this.$refs.img_list.getElementsByTagName('li')
       if (e !== '') {
         $lis.forEach(item => {

@@ -45,7 +45,8 @@ export default [
     component: () => import('../views/admin.vue'),
     children: [
       { path: 'tool', name: '工具后台', component: () => import('../views/AdminPages/toolAdmin.vue') },
-      { path: 'blog', name: '博文后台', component: () => import('../views/AdminPages/blogAdmin.vue') }
+      { path: 'blog', name: '博文后台', component: () => import('../views/AdminPages/blogAdmin.vue') },
+      { path: 'growUp', name: 'markdown', component: () => import('../views/markdown/index.vue') }
     ]
   }, // 路由懒加载
   { path: '*', name: '网站首页', component: () => import('../views/Home.vue') } // 路由懒加载
