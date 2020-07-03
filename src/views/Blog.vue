@@ -137,6 +137,9 @@ export default {
 }
 </script>
 <style lang="less">
+<<<<<<< HEAD
+
+=======
 .box-card {
   .blogList {
     li {
@@ -265,4 +268,5 @@ export default {
     }
   }
 }
+>>>>>>> dev
 </style>

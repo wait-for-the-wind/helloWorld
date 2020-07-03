@@ -338,6 +338,15 @@ export default {
     ...mapState(['count'])
   },
   mounted () {
+    var self = this
+    this.test()
+    // this.axiosAll()
+    this.sum()
+    this.getImageInfo('http://static.tonnn.com/generalpage/4868/pic_small.jpg?v=4', (width, height) => {
+      // 1、箭头函数内部得 this 指向与外部得 this 指向相同
+      this.img_width = width
+      self.img_height = height
+    })
     this.checkUndefind()
     this.card_data = this.card_info_list[0]
   },
