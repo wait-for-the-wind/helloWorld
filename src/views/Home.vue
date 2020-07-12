@@ -338,8 +338,10 @@ export default {
     ...mapState(['count'])
   },
   mounted () {
+    var self = this
     this.checkUndefind()
     this.card_data = this.card_info_list[0]
+    console.log('this.card_data', this.card_data)
   },
   components: {
     'my-rank': rank,

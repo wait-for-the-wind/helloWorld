@@ -57,10 +57,15 @@ export default {
           }
           p {
             font-weight: bold;
+            text-align: left;
             color: #666;
             font-size: 14px;
             line-height: 28px;
             height: 28px;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            white-space: nowrap;
+            max-width: 230px;
           }
         }
       }

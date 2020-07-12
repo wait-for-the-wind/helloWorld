@@ -92,6 +92,10 @@ export default {
                 font-size: 1.2rem;
                 text-align: left;
                 display: block;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+                max-width: 250px;
               }
             }
           }
