@@ -48,7 +48,7 @@ export default {
           info: '查询Html标签、Css属性兼容性'
         },
         {
-          web_url: 'https://htmlcolorcodes.com/zh/yanse-biao/',
+          web_url: 'https://htmlcolorcodes.com/zh/yanse-xuanze-qi/',
           img_src: require('../../assets/images/color.jpg'),
           title: '颜色搭配表',
           info: '16进制颜色查询'
@@ -136,6 +136,12 @@ export default {
           img_src: require('../../assets/images/onlinefont.png'),
           title: '有字库，多种字体选择',
           info: '字体使用'
+        },
+        {
+          web_url: 'http://www.jshaman.com/protect_free.html',
+          img_src: require('../../assets/images/shaman.png'),
+          title: 'JS shaman加密保护',
+          info: '加密JS代码'
         }
       ]
     }

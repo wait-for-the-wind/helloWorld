@@ -23,6 +23,7 @@ export default {
       flag: false,
       currentPage1: 1,
       data: [
+        // 范例
         {
           web_url: 'http://www.jshaman.com/protect_free.html',
           img_src: require('../../assets/images/shaman.png'),

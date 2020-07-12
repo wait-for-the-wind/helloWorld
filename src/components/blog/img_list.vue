@@ -48,11 +48,6 @@ export default {
             display: block;
             transition: all 1s;
           }
-          img:hover {
-            transform: scale(1.2);
-            filter: blur(0px);
-            opacity: 1;
-          }
         }
         span {
           position: absolute;
@@ -70,6 +65,11 @@ export default {
           display: -webkit-box;
           -webkit-line-clamp: 2;
         }
+      }
+      li:hover img {
+        transform: scale(1.2);
+        filter: blur(0px);
+        opacity: 1;
       }
     }
   }
