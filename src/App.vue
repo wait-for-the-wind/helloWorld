@@ -62,8 +62,6 @@ export default {
       this.sub_title = to.matched[0].name
       this.sub_sub_title = to.matched[1] ? to.matched[1].name : ''
       this.activeIndex1 = to.path === '/' ? '/home' : to.path
-    $route(to, from) {
-      this.activeIndex1 = to.path
     }
   },
   methods: {

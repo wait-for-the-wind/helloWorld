@@ -23,11 +23,12 @@ export default {
       flag: false,
       currentPage1: 1,
       data: [
+        // 范例
         {
-          web_url: 'https://c.runoob.com/compile/5577',
-          img_src: 'https://c.runoob.com/wp-content/uploads/2019/05/typescript.png',
-          title: 'TS 在线工具',
-          info: '在线编译、运行 TS 代码'
+          web_url: 'http://www.jshaman.com/protect_free.html',
+          img_src: require('../../assets/images/shaman.png'),
+          title: 'JS shaman加密保护',
+          info: '加密JS代码'
         }
       ]
     }

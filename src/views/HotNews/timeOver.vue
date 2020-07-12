@@ -12,6 +12,18 @@ export default {
       flag: false,
       card: [
         {
+          list_number: 921,
+          title_date: '2020-07-03',
+          sub_title: '你要向前走！无论路有多黑！',
+          content: '人生一世、花草一秋，生而无悔！'
+        },
+        {
+          list_number: 921,
+          title_date: '2020-07-01',
+          sub_title: '彻底闹翻了',
+          content: '微信，手机都拉黑了，你还会去杭州吗？'
+        },
+        {
           list_number: 92,
           title_date: '2020-06-21',
           sub_title: '干巴得',

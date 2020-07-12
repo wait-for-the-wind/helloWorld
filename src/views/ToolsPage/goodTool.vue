@@ -24,28 +24,16 @@ export default {
       currentPage1: 1,
       data: [
         {
-          web_url: 'https://c.runoob.com/compile/5577',
-          img_src: 'https://c.runoob.com/wp-content/uploads/2019/05/typescript.png',
-          title: 'TS 在线工具',
-          info: '在线编译、运行 TS 代码'
+          web_url: 'https://c.runoob.com/',
+          img_src: require('../../assets/images/cn.png'),
+          title: '菜鸟 在线工具',
+          info: '提供各种编码、前端工具'
         },
         {
-          web_url: 'https://c.runoob.com/front-end/51',
-          img_src: 'https://c.runoob.com/wp-content/uploads/2016/01/js.png',
-          title: 'JS 压缩/解压工具',
-          info: '在线压缩/解压 JS 代码'
-        },
-        {
-          web_url: 'https://c.runoob.com/front-end/52',
-          img_src: 'https://c.runoob.com/wp-content/uploads/2016/01/css.png',
-          title: 'CSS 压缩/解压工具',
-          info: '在线压缩/解压 CSS 代码'
-        },
-        {
-          web_url: 'https://c.runoob.com/front-end/5580',
-          img_src: 'https://c.runoob.com/wp-content/uploads/2019/05/count-word.png',
-          title: '在线字数统计工具',
-          info: '汉字、原文、符号统计'
+          web_url: 'https://tool.oschina.net/',
+          img_src: require('../../assets/images/osChina.png'),
+          title: 'osChina 在线工具',
+          info: '提供各种编码、加密、转换工具'
         },
         {
           web_url: 'https://www.jiumodiary.com/',
@@ -60,10 +48,22 @@ export default {
           info: '查询Html标签、Css属性兼容性'
         },
         {
-          web_url: 'https://htmlcolorcodes.com/zh/yanse-biao/',
-          img_src: 'https://c.runoob.com/wp-content/uploads/2018/11/3LkGs.png',
+          web_url: 'https://htmlcolorcodes.com/zh/yanse-xuanze-qi/',
+          img_src: require('../../assets/images/color.jpg'),
           title: '颜色搭配表',
           info: '16进制颜色查询'
+        },
+        {
+          web_url: 'http://www.yuangongju.com/color',
+          img_src: require('../../assets/images/random.png'),
+          title: '随机颜色',
+          info: '具有随机选色功能，颜色也挺好看的'
+        },
+        {
+          web_url: 'https://color.adobe.com/zh/create/color-wheel',
+          img_src: require('../../assets/images/color.png'),
+          title: '自配颜色',
+          info: '根据自己的需求，配置自己需要的颜色'
         },
         {
           web_url: 'https://www.npmjs.com/',
@@ -82,6 +82,66 @@ export default {
           img_src: require('../../assets/images/MOMO.png'),
           title: 'MOMO 百度文库下载',
           info: '账号236274515密码862435'
+        },
+        {
+          web_url: 'https://curl.trillworks.com/',
+          img_src: require('../../assets/images/pachong.png'),
+          title: '网络自动请求爬虫编写',
+          info: '获取接口的bash即可使用'
+        },
+        {
+          web_url: 'https://tinypng.com/',
+          img_src: require('../../assets/images/tin.png'),
+          title: 'jpg、png图片压缩',
+          info: '在线压缩图片，单张最高5M'
+        },
+        {
+          web_url: 'https://pixabay.com/zh/',
+          img_src: require('../../assets/images/img.png'),
+          title: '免费高清图片素材库（中文）',
+          info: '可以使用众多免费的高清素材图片'
+        },
+        {
+          web_url: 'https://unsplash.com/',
+          img_src: require('../../assets/images/unsplash.png'),
+          title: '免费高清图片素材库（英文）',
+          info: '可以使用众多免费的高清素材图片'
+        },
+        {
+          web_url: 'https://cupcake.nilssonlee.se/',
+          img_src: require('../../assets/images/cupcake.png'),
+          title: '免费高清图片素材库（英文）',
+          info: '可以使用众多免费的高清素材图片'
+        },
+        {
+          web_url: 'https://app.xunjiepdf.com/',
+          img_src: require('../../assets/images/xunjie.png'),
+          title: '迅捷在线格式转换',
+          info: '2M 以内免费'
+        },
+        {
+          web_url: 'http://www.zhanshaoyi.com/rjxz.html',
+          img_src: require('../../assets/images/share.png'),
+          title: '软件下载',
+          info: '破解软件也很香'
+        },
+        {
+          web_url: 'https://www.iconfont.cn/',
+          img_src: require('../../assets/images/albb.png'),
+          title: '阿里巴巴矢量图标库',
+          info: '矢量图使用'
+        },
+        {
+          web_url: 'https://www.webfont.com/onlinefont/index',
+          img_src: require('../../assets/images/onlinefont.png'),
+          title: '有字库，多种字体选择',
+          info: '字体使用'
+        },
+        {
+          web_url: 'http://www.jshaman.com/protect_free.html',
+          img_src: require('../../assets/images/shaman.png'),
+          title: 'JS shaman加密保护',
+          info: '加密JS代码'
         }
       ]
     }

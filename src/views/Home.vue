@@ -7,7 +7,7 @@
       <el-col :span="6" class="my_info">
         <!-- 个人信息 -->
         <el-card class="box-card" body-style="background: #F7F9F9;height:258px;">
-          <h2>盛·迎风的名片</h2>
+          <h2>盛·毅的名片</h2>
           <p>职业：web前端开发</p>
           <p>现居：江西省-南昌市</p>
           <p>公司：江西中至科技有限公司</p>
@@ -93,7 +93,7 @@ export default {
           title_href: 'javascript:;'
         },
         {
-          title: '从吃土到绝地重生',
+          title: '你会重新站起来的，加油',
           title_href: 'javascript:;'
         }
       ],
@@ -339,16 +339,9 @@ export default {
   },
   mounted () {
     var self = this
-    this.test()
-    // this.axiosAll()
-    this.sum()
-    this.getImageInfo('http://static.tonnn.com/generalpage/4868/pic_small.jpg?v=4', (width, height) => {
-      // 1、箭头函数内部得 this 指向与外部得 this 指向相同
-      this.img_width = width
-      self.img_height = height
-    })
     this.checkUndefind()
     this.card_data = this.card_info_list[0]
+    console.log('this.card_data', this.card_data)
   },
   components: {
     'my-rank': rank,

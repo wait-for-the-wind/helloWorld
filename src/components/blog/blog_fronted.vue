@@ -5,7 +5,7 @@
         <h5><router-link to="/tools/blogInfo/">Jquery初步学习!</router-link></h5>
         <dl>
           <dt><a href="javascript:;"><img src="@images/avatar_2.jpg" alt=""></a></dt>
-          <dd class="author"><a href="javascript:;">wait-for-the-wind</a></dd>
+          <dd class="author"><a href="javascript:;">盛毅</a></dd>
           <div class="info">
             1. Jquery初步学习!Jquery初步学习!Jquery初步学习!Jquery初步学习!Jquery初步学习!Jquery初步学习!Jquery初步学习!Jquery初步学习!Jquery初步学习!
           </div>

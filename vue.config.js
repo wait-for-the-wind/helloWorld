@@ -1,4 +1,3 @@
-const path = require('path')
 const webpack = require('webpack')
 
 // 路径别名
