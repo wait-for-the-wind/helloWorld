@@ -10,6 +10,7 @@ import echarts from 'echarts'
 import 'babel-polyfill'
 // 引入全局样式
 import '@/assets/global.less'
+import '@/assets/css/special.less'
 // 引入elementUI以及CSS样式
 import elementUI from 'element-ui'
 // 这种导入相同与直接可以使用了

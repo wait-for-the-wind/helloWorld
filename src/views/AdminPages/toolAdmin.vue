@@ -5,7 +5,7 @@
       <el-col :span="4" class="center">
           工具名称：
       </el-col>
-      <el-col :span="8">
+      <el-col :span="8" class="rainbow">
           <el-input
             placeholder="请输入工具名称"
             prefix-icon="el-icon-date"
@@ -17,7 +17,7 @@
       <el-col :span="4" class="center">
           工具详情：
       </el-col>
-      <el-col :span="8">
+      <el-col :span="8" class="rainbow">
           <el-input
             placeholder="请输入工具详情"
             prefix-icon="el-icon-date"
