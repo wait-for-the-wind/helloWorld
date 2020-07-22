@@ -4,7 +4,11 @@
       <div class="wrapper">
         <div class="logo fl">
           <!-- 盛静银个人博客 -->
-          <router-link to='/'>**********</router-link> | <font>建于<time>2020年03月30日</time></font>
+          <router-link to="/" class="autho">shengyi</router-link>|
+          <font>
+            建于
+            <time>2020年03月30日</time>
+          </font>
         </div>
         <nav class="nav fl">
           <el-menu
@@ -15,7 +19,8 @@
             @select="handleSelect"
             background-color="#545c64"
             text-color="#fff"
-            active-text-color="#ffd04b">
+            active-text-color="#ffd04b"
+          >
             <el-menu-item index="/home">网站首页</el-menu-item>
             <el-menu-item index="/tools">优秀得工具</el-menu-item>
             <el-menu-item index="/blog">鸡汤博文</el-menu-item>
@@ -28,14 +33,20 @@
     <div class="wrapper">
       <el-breadcrumb separator="/" class="path">
         <el-breadcrumb-item :to="{ path: '/' }">首页</el-breadcrumb-item>
-        <el-breadcrumb-item><a href="/">{{sub_title}}</a></el-breadcrumb-item>
+        <el-breadcrumb-item>
+          <a href="/">{{sub_title}}</a>
+        </el-breadcrumb-item>
         <el-breadcrumb-item>{{sub_sub_title}}</el-breadcrumb-item>
       </el-breadcrumb>
     </div>
-    <router-view class="container"/>
+    <router-view class="container" />
     <footer>
       <!-- <p>站长是一位比较佛性的程序猿，故本网站不兼容IE9以下（IE9查看也会有些问题）</p> -->
-      <p>Copyright &copy; <a href="www.shengjingyin.com" target="_blank">www.shengjingyin.com</a> 备案号：<a href="www.shengjingyin.com" target="_blank">赣ICI：text678</a></p>
+      <p>
+        Copyright &copy;
+        <a href="www.shengjingyin.com" target="_blank">www.shengjingyin.com</a> 备案号：
+        <a href="www.shengjingyin.com" target="_blank">赣ICI：text678</a>
+      </p>
     </footer>
   </div>
 </template>
@@ -45,7 +56,7 @@
 
 export default {
   name: 'app',
-  data () {
+  data() {
     return {
       name: '21313',
       activeIndex1: '', // 动态tab切换
@@ -53,19 +64,19 @@ export default {
       sub_sub_title: ''
     }
   },
-  mounted () {
+  mounted() {
     this.activeIndex1 = this.$router.currentRoute.fullPath
     console.log('this.router', this.$router)
   },
   watch: {
-    $route (to, from) {
+    $route(to, from) {
       this.sub_title = to.matched[0].name
       this.sub_sub_title = to.matched[1] ? to.matched[1].name : ''
       this.activeIndex1 = to.path === '/' ? '/home' : to.path
     }
   },
   methods: {
-    handleSelect (key, keyPath) {
+    handleSelect(key, keyPath) {
       // console.log(key, keyPath)
     }
   }
@@ -92,9 +103,46 @@ body {
       .logo {
         font: 22px/56px 'Microsoft YaHei', Arial, Helvetica, sans-serif;
         display: inline-block;
+        .autho {
+          position: absolute;
+          transform: translate(-50%, -50%);
+          text-transform: uppercase;
+          text-align: center;
+          background-color: #e74c3c;
+          transform: skewY(-5deg);
+          padding: 0 10px;
+          height: 40px;
+          line-height: 40px;
+          margin-left: 30px;
+        }
+
+        .autho::after {
+          content: '';
+          width: 100%;
+          height: 10px;
+          background-color: #95a5a6;
+          position: absolute;
+          bottom: -10px;
+          left: -5px;
+          transform: skewX(-45deg);
+          opacity: .8;
+        }
+
+        .autho::before {
+          content: '';
+          width: 10px;
+          height: 100%;
+          background-color: #95a5a6;
+          position: absolute;
+          bottom: -5px;
+          left: -10px;
+          transform: skewY(135deg);
+          opacity: .8;
+        }
         font {
           font-size: 15px;
           color: white;
+          margin-left: 150px;
         }
       }
       .nav {
@@ -118,8 +166,9 @@ body {
       top: -5px;
       width: 100%;
     }
-    .container,.path {
-      background: #FDFEFE;
+    .container,
+    .path {
+      background: #fdfefe;
       box-shadow: 15px 0px 15px -15px #666, -15px 0px 15px -15px #666;
     }
     .path {

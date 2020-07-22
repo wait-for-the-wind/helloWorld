@@ -1,0 +1,20 @@
+//  1、输入框移入时，底部加彩虹效果
+.rainbow {
+  position: relative;
+  overflow: hidden;
+}
+.rainbow::before {
+  content: '';
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(to right, white, #2ecc71, #e74c3c, #95a5a6, white);
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  z-index: 99;
+  transform: translate(-100%);
+  transition: .5s;
+}
+.rainbow:hover::before {
+  transform: translate(0%);
+}
