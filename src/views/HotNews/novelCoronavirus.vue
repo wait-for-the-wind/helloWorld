@@ -6,19 +6,23 @@
 <script>
 import China from '@js/china.js'
 import json from './data1.json'
+import json2 from './data2.json'
 export default {
   data() {
     return {
       flag: false,
-      json: []
+      json: [],
+      json2: []
     }
   },
   mounted() {
     this.json = json
+    this.json2 = json2
+    console.log('this.json2.length', this.json2.length)
     this.drawMap()
   },
   methods: {
-    drawMap () {
+    drawMap() {
       this.$echart.registerMap('China', China)
       var myMap = this.$echart.init(this.$refs.main)
       myMap.setOption({
@@ -47,23 +51,26 @@ export default {
             { min: 1, max: 9 } // 不指定 min，表示 min 为无限大（-Infinity）。
           ]
         },
-        series: [{
-          name: '地图',
-          type: 'map',
-          map: 'china',
-          data: json.map(r => {
-            return {
-              name: r.provinceShortName,
-              value: r.currentConfirmedCount,
-              totle: r.confirmedCount
-            }
-          })
-        }]
+        series: [
+          {
+            name: '地图',
+            type: 'map',
+            map: 'china',
+            data: json.map((r) => {
+              return {
+                name: r.provinceShortName,
+                value: r.currentConfirmedCount,
+                totle: r.confirmedCount
+              }
+            })
+          }
+        ]
       })
     }
   }
 }
 </script>
 <style lang='less' scoped>
-  body{}
+body {
+}
 </style>

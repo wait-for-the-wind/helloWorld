@@ -16,7 +16,7 @@ module.exports = {
   },
   // 2\跨域
   devServer: {
-    proxy: 'http://p.2217.com/'
+    proxy: 'http://p.2217.com/tg/myyh/'
   }
   // configureWebpack: () => {
   //   config.module.rules.push({

@@ -1,11 +1,11 @@
 <template>
   <div>
     <iframe
-      src="http://p.2217.com/tg/myyh/chuanqi97/adp_new/ccid/?fy=no"
+      src="http://p.2217.com/tg/myyh/ahyx9/adp_new/ccid/?fy=no"
       frameborder="0"
       id="iframe"
       name="iframe2"
-      @load="iframeOnload"
+      @load="iframeLoad($event)"
     ></iframe>
     <button @click="loadFnc">下载</button>
     <canvas id="canvas"></canvas>
@@ -23,7 +23,6 @@ export default {
         'https://sstatic.tonnn.com/generalpage/4581/pic_small.jpg?v=5'
       ],
       smallImg: [],
-      bigImg: [],
       img_id: [
         1857,
         2601,
@@ -4671,6 +4670,9 @@ export default {
   },
   mounted() {},
   methods: {
+    iframeLoad(e) {
+      console.log('加载好了:', e)
+    },
     imgLoad() {
       for (let i = 0; i < this.img_id.length; i++) {
         var _this = this
@@ -4760,7 +4762,7 @@ export default {
 body {
   iframe {
     width: 100%;
-    height: 300px;
+    height: 500px;
   }
 }
 </style>
