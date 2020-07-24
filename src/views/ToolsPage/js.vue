@@ -2,6 +2,7 @@
   <div class="root">
     32312313
     <button>展示</button>
+    <button>展示</button>
   </div>
 </template>
 <script>
