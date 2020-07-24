@@ -1,5 +1,3 @@
-const webpack = require('webpack')
-
 // 路径别名
 const path = require('path')
 const { config } = require('process')
@@ -10,7 +8,7 @@ function resolve(dir) {
 module.exports = {
   // 1\路径别名
   lintOnSave: true,
-  chainWebpack: config => {
+  chainWebpack: (config) => {
     config.resolve.alias
       .set('@images', resolve('src/assets/images'))
       .set('@js', resolve('src/assets/js'))
@@ -18,7 +16,7 @@ module.exports = {
   },
   // 2\跨域
   devServer: {
-    proxy: 'http://api.2217.com'
+    proxy: 'http://p.2217.com/'
   }
   // configureWebpack: () => {
   //   config.module.rules.push({

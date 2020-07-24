@@ -20,7 +20,12 @@
       <el-col :span="17">
         <el-card class="box-card">
           <el-tabs v-model="activeName" @tab-click="handleClick">
-            <el-tab-pane :label="item.label" :name="item.name" v-for="item in card_list" :key="item.name">
+            <el-tab-pane
+              :label="item.label"
+              :name="item.name"
+              v-for="item in card_list"
+              :key="item.name"
+            >
               <!-- 卡片内容组件，切换不同的卡片时，传递不同的内容过去 -->
               <my-card :card_data="card_data"></my-card>
             </el-tab-pane>
@@ -64,7 +69,7 @@ import card from '@components/home_card.vue'
 import { mapMutations, mapState } from 'vuex'
 import axios from 'axios'
 export default {
-  data () {
+  data() {
     return {
       activeName: 'first',
       // 点击排行
@@ -165,7 +170,8 @@ export default {
           news_list: [
             {
               new_title: ' 父组件如何修改子组件得dom',
-              new_info: '当我点击手风琴时候，想让左侧图片得高度发生变化，但因为这是个子组件，我没办法直接获取子组件dom并加以修改，答：可以把这两个组件同时做成一个组件，这样就不存在子组件的问题了',
+              new_info:
+                '当我点击手风琴时候，想让左侧图片得高度发生变化，但因为这是个子组件，我没办法直接获取子组件dom并加以修改，答：可以把这两个组件同时做成一个组件，这样就不存在子组件的问题了',
               new_id: 1
             },
             {
@@ -180,7 +186,8 @@ export default {
             },
             {
               new_title: ' 深化交互效果',
-              new_info: '简单的css可不能打动面试官，需要把vuex加入进来 axios加入进来 mock.js加入进来',
+              new_info:
+                '简单的css可不能打动面试官，需要把vuex加入进来 axios加入进来 mock.js加入进来',
               new_id: 4
             },
             {
@@ -207,7 +214,8 @@ export default {
           news_list: [
             {
               new_title: ' 缘起于2020-07-27的那本JAVA从入门到入土',
-              new_info: '当我买了那本书后，我还不知道我得生活已经发生了惊天巨变',
+              new_info:
+                '当我买了那本书后，我还不知道我得生活已经发生了惊天巨变',
               new_id: 1
             },
             {
@@ -222,12 +230,14 @@ export default {
             },
             {
               new_title: ' 我仅仅是一个“草根站长”',
-              new_info: '虽然也经历了被人质疑、嘲笑和不屑。但是我始终坚信自己的选择是正确的。并把他们的这些不屑变成更强的动力，去追逐成功。网上很多说个人博客末落了，说的是第',
+              new_info:
+                '虽然也经历了被人质疑、嘲笑和不屑。但是我始终坚信自己的选择是正确的。并把他们的这些不屑变成更强的动力，去追逐成功。网上很多说个人博客末落了，说的是第',
               new_id: 4
             },
             {
               new_title: ' 我仅仅是一个“草根站长”',
-              new_info: '虽然也经历了被人质疑、嘲笑和不屑。但是我始终坚信自己的选择是正确的。并把他们的这些不屑变成更强的动力，去追逐成功。网上很多说个人博客末落了，说的是第',
+              new_info:
+                '虽然也经历了被人质疑、嘲笑和不屑。但是我始终坚信自己的选择是正确的。并把他们的这些不屑变成更强的动力，去追逐成功。网上很多说个人博客末落了，说的是第',
               new_id: 5
             }
           ],
@@ -249,7 +259,8 @@ export default {
           news_list: [
             {
               new_title: ' 父组件如何修改子组件得dom',
-              new_info: '当我点击手风琴时候，想让左侧图片得高度发生变化，但因为这是个子组件，我没办法直接获取子组件dom并加以修改，暂时先放一放',
+              new_info:
+                '当我点击手风琴时候，想让左侧图片得高度发生变化，但因为这是个子组件，我没办法直接获取子组件dom并加以修改，暂时先放一放',
               new_id: 1
             },
             {
@@ -264,12 +275,14 @@ export default {
             },
             {
               new_title: ' 我仅仅是一个“草根站长”',
-              new_info: '虽然也经历了被人质疑、嘲笑和不屑。但是我始终坚信自己的选择是正确的。并把他们的这些不屑变成更强的动力，去追逐成功。网上很多说个人博客末落了，说的是第',
+              new_info:
+                '虽然也经历了被人质疑、嘲笑和不屑。但是我始终坚信自己的选择是正确的。并把他们的这些不屑变成更强的动力，去追逐成功。网上很多说个人博客末落了，说的是第',
               new_id: 4
             },
             {
               new_title: ' 我仅仅是一个“草根站长”',
-              new_info: '虽然也经历了被人质疑、嘲笑和不屑。但是我始终坚信自己的选择是正确的。并把他们的这些不屑变成更强的动力，去追逐成功。网上很多说个人博客末落了，说的是第',
+              new_info:
+                '虽然也经历了被人质疑、嘲笑和不屑。但是我始终坚信自己的选择是正确的。并把他们的这些不屑变成更强的动力，去追逐成功。网上很多说个人博客末落了，说的是第',
               new_id: 5
             }
           ],
@@ -291,7 +304,8 @@ export default {
           news_list: [
             {
               new_title: ' 父组件如何修改子组件得dom',
-              new_info: '当我点击手风琴时候，想让左侧图片得高度发生变化，但因为这是个子组件，我没办法直接获取子组件dom并加以修改，暂时先放一放',
+              new_info:
+                '当我点击手风琴时候，想让左侧图片得高度发生变化，但因为这是个子组件，我没办法直接获取子组件dom并加以修改，暂时先放一放',
               new_id: 1
             },
             {
@@ -306,12 +320,14 @@ export default {
             },
             {
               new_title: ' 我仅仅是一个“草根站长”',
-              new_info: '虽然也经历了被人质疑、嘲笑和不屑。但是我始终坚信自己的选择是正确的。并把他们的这些不屑变成更强的动力，去追逐成功。网上很多说个人博客末落了，说的是第',
+              new_info:
+                '虽然也经历了被人质疑、嘲笑和不屑。但是我始终坚信自己的选择是正确的。并把他们的这些不屑变成更强的动力，去追逐成功。网上很多说个人博客末落了，说的是第',
               new_id: 4
             },
             {
               new_title: ' 我仅仅是一个“草根站长”',
-              new_info: '虽然也经历了被人质疑、嘲笑和不屑。但是我始终坚信自己的选择是正确的。并把他们的这些不屑变成更强的动力，去追逐成功。网上很多说个人博客末落了，说的是第',
+              new_info:
+                '虽然也经历了被人质疑、嘲笑和不屑。但是我始终坚信自己的选择是正确的。并把他们的这些不屑变成更强的动力，去追逐成功。网上很多说个人博客末落了，说的是第',
               new_id: 5
             }
           ],
@@ -329,15 +345,14 @@ export default {
         }
       ],
       // 传递给card的数据
-      card_data: {
-      }
+      card_data: {}
     }
   },
   // 状态管理器中的数据映射在计算属性中
   computed: {
     ...mapState(['count'])
   },
-  mounted () {
+  mounted() {
     var self = this
     this.checkUndefind()
     this.card_data = this.card_info_list[0]
@@ -350,7 +365,7 @@ export default {
   },
   methods: {
     ...mapMutations(['add', 'sub', 'subN']),
-    handleClick (tab, event) {
+    handleClick(tab, event) {
       var blogArr = ['博客日记', '码农生涯', '旅游计划', 'JS&Vue']
       // bad
       // for (var i = 0; i < blog_arr.length; i++) {
@@ -365,16 +380,16 @@ export default {
         if (item === tab.label) this.card_data = this.card_info_list[index]
       })
     },
-    checkUndefind () {
-      var undefind = true;
+    checkUndefind() {
+      var undefind = true
       // 传入一个undefind，可以避免外界把undefind值更改过
-      (function IIFE (undefind) {
+      ;(function IIFE(undefind) {
         var a
         if (a === undefind) {
           // 这时候使用 undefined 没有问题
         } else {
         }
-      }())
+      })()
     }
   }
 }
@@ -383,7 +398,7 @@ export default {
 .home {
   width: 1200px;
   margin: 0 auto;
-  counter-reset:sectioncounter; // 自动增加序号的这个需要写在根标签下
+  counter-reset: sectioncounter; // 自动增加序号的这个需要写在根标签下
 }
 p {
   text-align: center;
@@ -394,7 +409,7 @@ p {
 }
 .my_info {
   height: 300px;
-  h2{
+  h2 {
     // margin: 0px;
     color: #333;
     font-size: 18px;
@@ -406,7 +421,8 @@ p {
     text-indent: 1em;
   }
 }
-.rank,.my_info {
+.rank,
+.my_info {
   margin-left: 30px;
   .clearfix {
     text-align: left;
