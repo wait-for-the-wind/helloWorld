@@ -1,6 +1,5 @@
 let fs = require('fs')
 function loadPage(url) {
-  console.log('url', url)
   var http = require('http')
   var pm = new Promise(function(resolve, reject) {
     http
@@ -19,8 +18,8 @@ function loadPage(url) {
   })
   return pm
 }
-let imgInfo = []
-/* let img_name = [
+
+let imgName = [
   'myyh5',
   'myyhlb',
   'ahyx8',
@@ -808,132 +807,32 @@ let imgInfo = []
   'xj',
   'chuanqi191',
   'wd1'
-] */
-let img_name = [
-  'xianxia14',
-  'gcld9',
-  'xs21',
-  'mu12',
-  'celue4',
-  'xianxia56',
-  'wx43',
-  'xmry15',
-  'my20',
-  'gcld13',
-  'rxzgzcs2',
-  'muhfh',
-  'celue8',
-  'chuanqi116',
-  'sg16',
-  'ysdl5',
-  'wdcqfl3',
-  'xianxia18',
-  'wx41',
-  'celue20',
-  'rxzgzcs4',
-  'xianxia44',
-  'xianxia23',
-  'ah3',
-  'mu8',
-  'my5',
-  'mu3',
-  'chuanqi25',
-  'szjdz2',
-  'dm7',
-  'wangyou54',
-  'xianxia5',
-  'sgz2',
-  'xianxia36',
-  'aiawa-zy1',
-  'sgzdy',
-  'chuanqi66',
-  'ahyx2',
-  'lsjj1',
-  'dm8',
-  'myyh11',
-  'ysdl1',
-  'chuanqi127',
-  'wangyou3',
-  'xianxia21',
-  'my2',
-  'wangyou32',
-  'wangyou5',
-  'szlb1',
-  'shwj',
-  'jihuang2',
-  'zsfyfl1',
-  'myyh2',
-  'wx60',
-  'mu33',
-  'djsy1',
-  'sg30',
-  'ahyx3',
-  'wangyou34',
-  'mu29',
-  'xianxia20',
-  'chuanqidzy',
-  'sgz12jqb',
-  'gjqt1',
-  'xianxia22',
-  'mm100',
-  'xmryfl1lyh',
-  'sg11',
-  'xianxia5zsy',
-  'sg1',
-  'wangyou47',
-  'wx23',
-  'chuanqi37',
-  'tdzs3',
-  'dy1',
-  'xianxia40',
-  'sg15',
-  'tongyong174',
-  'chuanqi124',
-  'rxzgzcsfl1',
-  'yeyou8',
-  'myjh2',
-  'wx11',
-  'mieshenfl1lb',
-  'chuanqi15',
-  'cqry2',
-  'musf5',
-  'xs7new',
-  'mlj1',
-  'hs2',
-  'wx30',
-  'wx58',
-  'chuanqi43',
-  'dxz',
-  'chuanqi28',
-  'chuanqi87',
-  'jyjh8',
-  'mm91',
-  'kjyss'
 ]
-// loadPage('http://p.2217.com/tg/myyh/myyh5/adp_new/ccid/?fy=no').then(function(
-//   d
-// ) {
-//   var imgIdStr = JSON.stringify(d).indexOf('basePath')
-//   console.log('imgIdStr', imgIdStr)
-//   var subStr = JSON.stringify(d).substr(imgIdStr + 22, 43)
-//   // var ImgID = subStr.charAt(3) === '/' ? subStr.substr(0, 3) : subStr
-//   console.log('res', subStr)
-//   // 照片id
-//   imgInfo[imgInfo.length] = subStr
-//   fs.writeFileSync(__dirname + '/data2.json', JSON.stringify(imgInfo))
-// })
-for (let i = 0; i < img_name.length; i++) {
+let imgInfo = []
+for (let i = 0; i < 100; i++) {
   loadPage(
-    'http://p.2217.com/tg/myyh/' + img_name[i] + '/adp_new/ccid/?fy=no'
+    'http://p.2217.com/tg/myyh/' + imgName[i] + '/adp_new/ccid/?fy=no'
   ).then(function(d) {
     // d 就是当前页的html内容
-    // console.log(JSON.stringify(d))
-    var imgIdStr = JSON.stringify(d).indexOf('basePath')
-    var subStr = JSON.stringify(d).substr(imgIdStr + 15, 43)
-    subStr = subStr.charAt(42) === '\\' ? subStr.substr(0, 42) : subStr
-    // console.log('res', ImgID)
-    // 照片id
-    imgInfo[imgInfo.length] = subStr
+    // bad
+    let regex = /\/generalpage\//
+    let index = d.search(regex)
+    let imgId =
+      d.substr(index + 13, 4).charAt(3) === '/'
+        ? d.substr(index + 13, 3).charAt(2) === '/'
+          ? d.substr(index + 13, 2)
+          : d.substr(index + 13, 3)
+        : d.substr(index + 13, 4)
+    // good
+    // let regex2 = /\/generalpage\/\d{3,4}/
+    // let img_id = d.match(regex2)[0].match(/\d+/)[0]
+    imgInfo.push({
+      urlName: imgName[i],
+      imgId: imgId
+    })
+    console.log('imgId', imgId)
+    // console.log('test', test[0].match(/\d+/)[0])
+
     fs.writeFileSync(__dirname + '/data2.json', JSON.stringify(imgInfo))
   })
 }

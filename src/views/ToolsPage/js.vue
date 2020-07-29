@@ -15,14 +15,12 @@ export default {
     }
   },
   mounted() {
-    let son = new this.Father('aaaa')
-    console.log('son', son)
+    let a = 'wwww.baidu.com'
+    console.log('/w.w.w/', /\w.\w.\w/.test(a))
+    console.log('match', a.match(/\w/))
+    console.log('search', a.search(/\w/))
   },
-  methods: {
-    Father(name) {
-      this.name = name
-    }
-  }
+  methods: {}
 }
 </script>
 <style lang='less' scoped>
