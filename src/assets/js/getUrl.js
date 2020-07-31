@@ -1,10 +1,10 @@
 let fs = require('fs')
 function loadPage(url) {
-  var http = require('http')
-  var pm = new Promise(function(resolve, reject) {
+  let http = require('http')
+  let pm = new Promise(function(resolve, reject) {
     http
       .get(url, function(res) {
-        var html = ''
+        let html = ''
         res.on('data', function(d) {
           html += d.toString()
         })
@@ -18,8 +18,7 @@ function loadPage(url) {
   })
   return pm
 }
-
-let imgName = [
+let urlName = [
   'myyh5',
   'myyhlb',
   'ahyx8',
@@ -808,10 +807,11 @@ let imgName = [
   'chuanqi191',
   'wd1'
 ]
+
 let imgInfo = []
 for (let i = 0; i < 100; i++) {
   loadPage(
-    'http://p.2217.com/tg/myyh/' + imgName[i] + '/adp_new/ccid/?fy=no'
+    'http://p.2217.com/tg/myyh/' + urlName[i] + '/adp_new/ccid/?fy=no'
   ).then(function(d) {
     // d 就是当前页的html内容
     // bad
@@ -827,7 +827,7 @@ for (let i = 0; i < 100; i++) {
     // let regex2 = /\/generalpage\/\d{3,4}/
     // let img_id = d.match(regex2)[0].match(/\d+/)[0]
     imgInfo.push({
-      urlName: imgName[i],
+      urlName: urlName[i],
       imgId: imgId
     })
     console.log('imgId', imgId)

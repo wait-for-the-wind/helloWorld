@@ -31,7 +31,7 @@ export default {
     },
     imgLoad() {
       for (let i = 0; i < this.dataJson.length; i++) {
-        var _this = this
+        let _this = this
         let img = new Image()
         let id = this.dataJson[i].imgId
         let name = this.dataJson[i].urlName
@@ -95,7 +95,7 @@ export default {
 
       // 利用时间取名
       let date = new Date()
-      var fileName =
+      let fileName =
         '小图注册页信息' +
         date.getFullYear() +
         '年' +
@@ -127,7 +127,7 @@ export default {
 
       // 利用时间取名
       let date = new Date()
-      var fileName =
+      let fileName =
         '小图注册页信息' +
         date.getFullYear() +
         '年' +

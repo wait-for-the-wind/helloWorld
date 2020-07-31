@@ -1,12 +1,12 @@
 <template>
   <div id="app">
     <div class="app">
-      <div class="wrapper">
+      <div class="wrapper banner">
         <div class="logo fl">
           <!-- 盛静银个人博客 -->
-          <router-link to="/" class="autho">shengyi</router-link>|
+          <router-link to="/" class="autho">shengyi</router-link>
           <font>
-            建于
+            | 建于
             <time>2020年03月30日</time>
           </font>
         </div>
@@ -30,7 +30,8 @@
         </nav>
       </div>
     </div>
-    <div class="wrapper">
+    <div style="height:75px;width:100%;"></div>
+    <div class="wrapper path-tit">
       <el-breadcrumb separator="/" class="path">
         <el-breadcrumb-item :to="{ path: '/' }">首页</el-breadcrumb-item>
         <el-breadcrumb-item>
@@ -61,7 +62,26 @@ export default {
       name: '21313',
       activeIndex1: '', // 动态tab切换
       sub_title: '',
-      sub_sub_title: ''
+      sub_sub_title: '',
+      // 滚动条配置
+      ops: {
+        vuescroll: {},
+        scrollPanel: {
+          initialScrollX: false,
+          scrollingY: true,
+          verticalNativeBarPos: 'left'
+        },
+        rail: {
+          keepShow: false
+        },
+        bar: {
+          size: '8px',
+          hoverStyle: true,
+          onlyShowBarOnScroll: false, // 是否只有滚动的时候才显示滚动条
+          background: 'black', // 滚动条颜色
+          opacity: 0.5 // 滚动条透明度
+        }
+      }
     }
   },
   mounted() {
@@ -84,21 +104,27 @@ export default {
 </script>
 <style lang="less" scoped>
 body {
+  padding-top: 55px;
   #app {
-    background: url('./assets/images/big_bg.jpg') center center;
-    background-size: 100%;
+    // background: url('./assets/images/big_bg.jpg') center center;
+    background-color: #34aadc;
+    background-size: contain;
     position: relative;
-    height: 100%;
-    width: 100%;
+    min-height: 100vh;
+    width: 100vw;
     .app {
       width: 100%;
       background-color: rgb(84, 92, 100);
       height: 60px;
       line-height: 60px;
-      overflow: hidden;
       margin-top: 5px;
-      a {
-        color: white;
+      position: fixed;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 99999;
+      color: white;
+      .banner {
+        background-color: rgb(84, 92, 100);
       }
       .logo {
         font: 22px/56px 'Microsoft YaHei', Arial, Helvetica, sans-serif;
@@ -125,7 +151,7 @@ body {
           bottom: -10px;
           left: -5px;
           transform: skewX(-45deg);
-          opacity: .8;
+          opacity: 0.8;
         }
 
         .autho::before {
@@ -137,7 +163,7 @@ body {
           bottom: -5px;
           left: -10px;
           transform: skewY(135deg);
-          opacity: .8;
+          opacity: 0.8;
         }
         font {
           font-size: 15px;
@@ -162,9 +188,13 @@ body {
         );
       height: 5px;
       content: '';
-      position: absolute;
+      position: fixed;
       top: -5px;
       width: 100%;
+      z-index: 9999999;
+    }
+    .path-tit {
+      // margin-top: 55px;
     }
     .container,
     .path {

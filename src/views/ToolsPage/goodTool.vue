@@ -18,7 +18,7 @@
 <script>
 import toolCard from '@components/toolCard.vue'
 export default {
-  data () {
+  data() {
     return {
       flag: false,
       currentPage1: 1,
@@ -37,7 +37,7 @@ export default {
         },
         {
           web_url: 'https://www.jiumodiary.com/',
-          img_src: 'https://www5.jiumodiary.com/images/front/eleps.png',
+          img_src: require('../../assets/images/jiumo.png'),
           title: '鸠摩搜索',
           info: '电子图书搜索'
         },
@@ -142,6 +142,18 @@ export default {
           img_src: require('../../assets/images/shaman.png'),
           title: 'JS shaman加密保护',
           info: '加密JS代码'
+        },
+        {
+          web_url: 'https://regexper.com/',
+          img_src: require('../../assets/images/regex.png'),
+          title: '正则表达式可视化',
+          info: '可以很好的即时表现出正则表达式含义'
+        },
+        {
+          web_url: 'http://www.bitbug.net/',
+          img_src: require('../../assets/images/BTC.png'),
+          title: '比特虫',
+          info: '将普通图片转换成favicon.ico图标'
         }
       ]
     }
@@ -150,10 +162,10 @@ export default {
     'my-toolCard': toolCard
   },
   methods: {
-    handleSizeChange (val) {
+    handleSizeChange(val) {
       console.log(`每页 ${val} 条`)
     },
-    handleCurrentChange (val) {
+    handleCurrentChange(val) {
       console.log(`当前页: ${val}`)
     }
   }
