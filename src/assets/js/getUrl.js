@@ -809,30 +809,33 @@ let urlName = [
 ]
 
 let imgInfo = []
-for (let i = 0; i < 100; i++) {
+for (let i = 0; i < 1; i++) {
   loadPage(
     'http://p.2217.com/tg/myyh/' + urlName[i] + '/adp_new/ccid/?fy=no'
   ).then(function(d) {
     // d 就是当前页的html内容
     // bad
-    let regex = /\/generalpage\//
-    let index = d.search(regex)
-    let imgId =
-      d.substr(index + 13, 4).charAt(3) === '/'
-        ? d.substr(index + 13, 3).charAt(2) === '/'
-          ? d.substr(index + 13, 2)
-          : d.substr(index + 13, 3)
-        : d.substr(index + 13, 4)
+    // console.log('d', d)
+    // let regex = /\/generalpage\//
+    // let index = d.search(regex)
+    // let imgId =
+    //   d.substr(index + 13, 4).charAt(3) === '/'
+    //     ? d.substr(index + 13, 3).charAt(2) === '/'
+    //       ? d.substr(index + 13, 2)
+    //       : d.substr(index + 13, 3)
+    //     : d.substr(index + 13, 4)
     // good
     // let regex2 = /\/generalpage\/\d{3,4}/
     // let img_id = d.match(regex2)[0].match(/\d+/)[0]
+    // superGood 前后断言，匹配前后内容
+    let reg = /(?<=generalpage\/)\d*(?=\/)/
+    let imgId = d.match(reg)[0]
     imgInfo.push({
       urlName: urlName[i],
       imgId: imgId
     })
     console.log('imgId', imgId)
     // console.log('test', test[0].match(/\d+/)[0])
-
     fs.writeFileSync(__dirname + '/data2.json', JSON.stringify(imgInfo))
   })
 }
