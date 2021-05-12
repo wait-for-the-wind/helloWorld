@@ -16,7 +16,7 @@
     "element-ui": "^2.13.2",
     "font-awesome": "^4.7.0",
     "marked": "^1.1.0",
-    "swiper": "^5.4.5",
+    "swiper": "^6.5.1",
     "vue": "^2.6.11",
     "vue-router": "^3.3.4",
     "vue-scroll": "^2.1.13",
